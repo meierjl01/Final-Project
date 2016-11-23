@@ -1,27 +1,32 @@
-# Basic Build with NPM scripts
-This is a project scaffolding and build tool for the TIY Austin Front-End Engineering course. Feel free to use and enjoy! Feedback and PRs welcome!
+Final Project for The Iron Yard
 
-## Features
-- A bare bones scaffolding for an SPA, without any libraries built in
-- A static server for serving up your dev environment via http
-- `app` directory for development, preloaded with an `index.html`, `scripts/entry.js`, `scss/main.scss` and `assets/`
-- `docs` directory for deployable code via gh-pages
-- es2015 and babel, including module syntax
-- mocha test runner
-- sass (.scss)
+-This application is an online bookshelf where users can interact with other users, giving book recommendations and suggestions, and also keep track of books they'd like to read.
 
-## Installation
-- Clone this repo (or fork then clone, if you prefer)
-- Remove the git history by running `rm -rf .git`
-- Set up a new git repo
-- Run `npm install`
-- if you get permission errors you may need to run `sudo npm install` to install a couple global dependencies
+-The application I'm going to build for my final project will be an online bookshelf of sorts. Originally, I wanted to build an app that would allow users to keep track of books they want to read, give other users suggestions of books to read, and books they have read. My idea was to have a suggestion feature (like Netflix) based on that user's reading history. However, that was too much for a three week project. So I'm focusing on allowing a user to have an online bookshelf and give recommendations to other users. Ideally, I'd like them to be able to connect to their actual GoodReads account with my app, but I'm still working out the details of that.
 
-## Use
-- `npm install` will scaffold your project AND start the dev server
-- `npm start` will start the dev server and watch for changes
-- `npm test` will run any test files included in the test folder
-- When the server is running, your site will be live on [http://localhost:8080/](http://localhost:8080/)
+-API:
+  -I will be using the GoodReads API for this application, unless I run into an issue using the proxy server or XML to JSON conversion Jess and I are working to set up. If that's the case, I will change my plan to involve Google Books instead.
+  -I'll also use Backendless to save users' libraries as well as friend lists
 
-## Dependencies
-- `sass` [install guide here](http://sass-lang.com/install)
+-Data Modeling:
+  -collections:
+    -users
+    -books
+  -models:
+    -user
+    -book
+
+-Routes:
+  -home:
+    -maybe includes a list of recent bestsellers?
+  -nav(not logged in):
+    -registration
+    -login
+  -nav(logged in):
+    -bookshelf
+    -'friends'
+    -search books
+    -search users
+
+-Special Features:
+  -I'm not sure if I'll use this or not, but I think that allowing users who have GoodReads accounts to access their accounts on my app would be a great user experience.
