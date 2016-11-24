@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router';
-import Home from './home';
 import store from '../store';
 
 export default React.createClass({
@@ -33,7 +32,6 @@ export default React.createClass({
     return (
       <div className="nav">
         {nav}
-        <Home />
       </div>
     )
   },
