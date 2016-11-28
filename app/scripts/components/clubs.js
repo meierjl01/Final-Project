@@ -28,7 +28,7 @@ export default React.createClass({
     return (
       <div>
         <h2>App description</h2>
-        {clubslist}
+        <ul>{clubslist}</ul>
       </div>
     )
   },

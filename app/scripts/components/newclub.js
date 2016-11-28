@@ -1,5 +1,6 @@
 import React from 'react';
 import store from '../store';
+import { browserHistory } from 'react-router';
 
 export default React.createClass({
   render() {
@@ -16,5 +17,6 @@ export default React.createClass({
     let name = this.refs.name.value;
     let description = this.refs.description.value;
     store.clubs.create({name, description});
+    browserHistory.push("/clubs");
   }
 });

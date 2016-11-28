@@ -10,12 +10,14 @@ export default Backbone.Collection.extend({
         $.ajax({
             url: 'https://goodreadsproxyserver.herokuapp.com/search/index.xml',
             data: {
-                q: 'Fight Club',
+                q: title,
                 key: 'ltifc503kqbqMU5MfwaXA',
             },
             success: (response) => {
-                var result = converter.xml2json(response);
-                console.log(result.GoodreadsResponse.search.results.work);
+                var result = converter.xml_str2json(response);
+                this.reset();
+                this.add(result.GoodreadsResponse.search.results.work);
+                // console.log(result.GoodreadsResponse.search.results.work);
             }
         });
     }

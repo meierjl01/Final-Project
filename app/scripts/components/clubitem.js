@@ -6,7 +6,7 @@ export default React.createClass({
   render() {
 
     return (
-      <Link to = {`/clubs/${this.props.club.name}`}>{this.props.club.name}</Link>
+      <li><Link to = {`/clubs/${this.props.club.name}`}>{this.props.club.name}</Link></li>
     )
   }
 });
