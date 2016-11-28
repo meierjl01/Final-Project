@@ -1,12 +1,12 @@
 Final Project for The Iron Yard
 
-- This application is an online bookshelf where users can interact with other users, giving book recommendations and suggestions, and also keep track of books they'd like to read.
+- This application is an online bookclub where users can join or create bookclubs. Each book club will have three libraries: current book the members are reading, past books they've read, and books that they want to read in the future.
 
-- The application I'm going to build for my final project will be an online bookshelf of sorts. Originally, I wanted to build an app that would allow users to keep track of books they want to read, give other users suggestions of books to read, and books they have read. My idea was to have a suggestion feature (like Netflix) based on that user's reading history. However, that was too much for a three week project. So I'm focusing on allowing a user to have an online bookshelf and give recommendations to other users. Ideally, I'd like them to be able to connect to their actual GoodReads account with my app, but I'm still working out the details of that.
+- Users will be able to log in and out, after registering. Users can create clubs, join other clubs, and also edit a club's book list. They can also They will also have the ability to communicate with other members in the club about general things or about the specific book they're currently reading. Users will also be able to see past comments related to specific books and/or clubs they're a member of.
 
 - API:
-  -I will be using the GoodReads API for this application, unless I run into an issue using the proxy server or XML to JSON conversion Jess and I are working to set up. If that's the case, I will change my plan to involve Google Books instead.
-  -I'll also use Backendless to save users' libraries as well as friend lists
+  - I will be using the GoodReads API for this application.
+  - I'll also use Backendless to save users' libraries as well as friend lists
 
 - Data Modeling:
   - collections:
@@ -18,14 +18,7 @@ Final Project for The Iron Yard
     - session
 
 - Routes:
-  - home:
-    - list of clubs
-  - nav(not logged in):
-    - registration
-    - login
-  - nav(logged in):
-    - club page (libraries)
-    - club/book page (book info and comments)
-
-- Special Features:
-  - I'm not sure if I'll use this or not, but I think that allowing users who have GoodReads accounts to access their accounts on my app would be a great user experience.
+  - login and register
+  - home page - list of clubs
+  - club page: current book, previous books and future books
+  - book/club page: book info and comments for that book and/or club
