@@ -59,7 +59,7 @@ export default Backbone.Model.extend({
                 window.localStorage.setItem('user-token', response['user-token']);
                 // window.localStorage.setItem('username', reponse.username);
                 window.localStorage.setItem('ownerId', response.ownerId);
-                browserHistory.push("/home");
+                browserHistory.push("/clubs");
             }
         });
     },

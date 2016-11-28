@@ -7,9 +7,9 @@ export default Backbone.Model.extend({
     defaults: {
       name: '',
       description: '',
-      currentBook: '',
-      pastBooks: [],
-      futureBooks: [],
-      messages: [],
+      // currentBook: '',
+      // pastBooks: [],
+      // futureBooks: [],
+      // messages: [],
     }
 });

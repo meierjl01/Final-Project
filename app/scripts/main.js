@@ -7,7 +7,7 @@ import router from './router';
 
 $(document).ajaxSend((evt, xhr, opts) => {
   if(opts.url.indexOf('goodreadsproxyserver') === -1) {
-    console.log('ajax send');
+    // console.log('ajax send');
 
     xhr.setRequestHeader('application-id', config.appId);
     xhr.setRequestHeader('secret-key', config.secret);

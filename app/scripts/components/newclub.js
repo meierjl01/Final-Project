@@ -6,7 +6,7 @@ export default React.createClass({
     return(
       <form onSubmit={this.handleCreate}>
         <input type="text" ref="name" placeholder="Club Name" />
-        <textarea ref="description" placeholder="Club Name" />
+        <textarea ref="description" placeholder="Club Description" />
         <input type="submit" id="create-club" value="Create a New Club" />
       </form>
     )
