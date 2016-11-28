@@ -18,13 +18,13 @@ export default React.createClass({
   render() {
     let nav =
       <nav className="logged-out">
-        <Link to = "login">Log In</Link>
-        <Link to = "register">Register</Link>
+        <Link to = "/login">Log In</Link>
+        <Link to = "/register">Register</Link>
       </nav>;
     if(this.state.authenticated) {
       nav = (
         <nav className="logged-in">
-          <Link to = "home">Home</Link>
+          <Link to = "/home">Home</Link>
           <input type = "submit" className="logout" onClick={this.handleLogout} value="Log Out"/>
         </nav>
       )

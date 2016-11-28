@@ -1,7 +1,7 @@
 import Backbone from 'backbone';
 import config from '../config';
 import $ from 'jquery';
-import { hashHistory } from 'react-router';
+import { browserHistory } from 'react-router';
 
 export default Backbone.Model.extend({
     initialize() {
@@ -37,18 +37,18 @@ export default Backbone.Model.extend({
                 password
             }),
             success: () => {
-                this.login(username, password);
+                this.login(email, password);
             }
         });
     },
 
-    login(username, password) {
+    login(email, password) {
         $.ajax({
             type: 'POST',
             url: 'https://api.backendless.com/v1/users/login',
             contentType: 'application/json',
             data: JSON.stringify({
-                login: username,
+                login: email,
                 password
             }),
             success: (response) => {
@@ -57,9 +57,9 @@ export default Backbone.Model.extend({
                 });
 
                 window.localStorage.setItem('user-token', response['user-token']);
-                window.localStorage.setItem('username', reponse.username);
+                // window.localStorage.setItem('username', reponse.username);
                 window.localStorage.setItem('ownerId', response.ownerId);
-                hashHistory("home");
+                browserHistory.push("/home");
             }
         });
     },
@@ -71,7 +71,7 @@ export default Backbone.Model.extend({
             success: () => {
                 this.clear();
                 window.localStorage.clear();
-                hashHistory.push("/");
+                browserHistory.push("/");
             }
         });
     },

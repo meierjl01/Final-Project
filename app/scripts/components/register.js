@@ -1,16 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router';
-import store '../store';
-import Login from './login';
+import store from '../store';
 
 export default React.createClass({
   render() {
     return (
       <form onSubmit={this.handleRegister} className="register-form">
-        <input ref="email" type="email" placholder="Email Address" />
-        <input ref="username" type="text" placholder="Username" />
-        <input ref="password" type="password" placholder="Password" />
-        <input ref="confirmpw" type="password" placholder="Confirm Password" />
+        <input ref="email" type="email" placeholder="Email Address" />
+        <input ref="username" type="text" placeholder="Username" />
+        <input ref="password" type="password" placeholder="Password" />
+        <input ref="confirmpw" type="password" placeholder="Confirm Password" />
         <input ref="register" type="submit" value="Register Now" />
         <div>Already a member? <Link to="login">Log In Now</Link></div>
       </form>
