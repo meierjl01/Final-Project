@@ -14,5 +14,6 @@ export default React.createClass({
   },
   handleAdd(e) {
     e.preventDefault();
+    console.log('add book');
   }
 });

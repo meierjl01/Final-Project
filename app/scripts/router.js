@@ -9,6 +9,9 @@ import NewClub from './components/newclub';
 import Login from './components/login';
 import Register from './components/register';
 import ClubHome from './components/containers/clubhome';
+import CurrentBook from './components/currentbook';
+import FutureBooks from './components/futurebooks';
+import PastBooks from './components/pastbooks';
 
 const router = (
   <Router history = {browserHistory}>
@@ -18,6 +21,9 @@ const router = (
       <Route path="/clubs" component={Clubs} />
       <Route path="/clubs/new" component={NewClub} />
       <Route path="/clubs/:name" component={ClubHome} />
+      <Route path="/clubs/:name/currentbook" component={CurrentBook} />
+      <Route path="/clubs/:name/futurebooks" component={FutureBooks} />
+      <Route path="/clubs/:name/pastbooks" component={PastBooks} />
     </Route>
   </Router>
 );
