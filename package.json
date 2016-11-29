@@ -46,7 +46,8 @@
     "babelify": "^7.3.0",
     "browserify": "^13.0.1",
     "chai": "^3.5.0",
-    "enzyme": "^2.4.1",
+    "chai-enzyme": "^0.6.1",
+    "enzyme": "^2.6.0",
     "eslint": "^3.9.1",
     "eslint-plugin-react": "^6.6.0",
     "jsdom": "^9.4.1",
@@ -54,6 +55,8 @@
     "onchange": "^2.5.0",
     "parallelshell": "^2.0.0",
     "react-addons-test-utils": "^15.3.0",
+    "sinon": "^1.17.6",
+    "sinon-spy-react": "^2.0.0",
     "watchify": "^3.7.0"
   },
   "dependencies": {

@@ -6,7 +6,7 @@ export default React.createClass({
     return(
       <form onSubmit={this.handleMessage}>
         <textarea placeholder="Join the conversation!" ref="note" />
-        <input type="button" value="Publish" />
+        <input type="submit" value="Publish" />
       </form>
     )
   },
