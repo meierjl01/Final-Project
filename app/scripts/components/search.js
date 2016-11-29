@@ -8,14 +8,18 @@ export default React.createClass ({
       books: store.books.toJSON()
     }
   },
+  componentWillMount() {
+    store.books.reset()
+  },
+  //clear out collection on will mount for search to clear search results -- backbone collection method that empties
   componentDidMount() {
     store.books.on('update change', this.updateState);
   },
   componentWillUnmount() {
-    store.books.off('update change', this.updateState);
+    store.books.off('update change', this.replaceState);
   },
   render() {
-    // console.log(this.state.books);
+    console.log(this.state.books);
     return (
       <div>
       <form onSubmit={this.handleSearch} className="search-div">
@@ -33,5 +37,8 @@ export default React.createClass ({
   },
   updateState() {
     this.setState({books: store.books.toJSON()})
+  },
+  replaceState() {
+    this.replaceState({books: })
   }
 });

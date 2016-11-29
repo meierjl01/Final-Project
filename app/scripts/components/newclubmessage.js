@@ -1,4 +1,5 @@
 import React from 'react';
+import store from '../store';
 
 export default React.createClass({
   render() {
@@ -10,7 +11,10 @@ export default React.createClass({
     )
   },
   handleMessage(e) {
-    e.preventDefault;
+    e.preventDefault();
     let message = this.refs.note.value;
+    let timestamp = new Date();
+    let ownerId = window.localStorage.getItem('ownerId');
+    store.messages.addMessage({message, timestamp, ownerId});
   }
-})
+});

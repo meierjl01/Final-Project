@@ -2,8 +2,7 @@ import React from 'react';
 
 export default React.createClass({
   render() {
-
-    console.log(this.props.book.best_book);
+    // console.log(this.props.book.best_book);
     return (
       <li>
         <span>{this.props.book.best_book.title}</span>
