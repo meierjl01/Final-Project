@@ -18,8 +18,8 @@ export default React.createClass({
   render() {
     let nav =
       <nav className="logged-out">
-        <Link to = "/login">Log In</Link>
-        <Link to = "/register">Register</Link>
+        <div><Link to = "/login">Log In</Link></div>
+        <div><Link to = "/register">Register</Link></div>
       </nav>;
     if(this.state.authenticated) {
       nav = (

@@ -5,7 +5,7 @@ export default React.createClass({
   render() {
     return (
       <header>
-        <h1>App Name Here</h1>
+        <h1>Book Buzz</h1>
         <Nav />
       </header>
     )
