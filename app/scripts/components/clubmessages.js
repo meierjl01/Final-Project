@@ -13,7 +13,7 @@ export default React.createClass({
         <li></li>
         <li></li>
       </ul>
-      <NewClubMessage />
+      <NewClubMessage clubId={this.props.clubId}/>
       </div>
     )
   }
