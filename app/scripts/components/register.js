@@ -7,7 +7,6 @@ export default React.createClass({
     return (
       <form onSubmit={this.handleRegister} className="register-form">
         <input ref="email" type="email" placeholder="Email Address" />
-        <input ref="username" type="text" placeholder="Username" />
         <input ref="password" type="password" placeholder="Password" />
         <input ref="confirmpw" type="password" placeholder="Confirm Password" />
         <input ref="register" type="submit" value="Register Now" />
@@ -18,12 +17,11 @@ export default React.createClass({
   handleRegister(e) {
     e.preventDefault();
     let email = this.refs.email.value;
-    let username = this.refs.username.value;
     let password = this.refs.password.value;
     let confirmPW = this.refs.confirmpw.value;
 
     if(store.session.validatePassword(password, confirmPW)) {
-      store.session.register(email, username, password);
+      store.session.register(email, password);
     } else {
       alert('Sorry, your passwords do not match');
     }

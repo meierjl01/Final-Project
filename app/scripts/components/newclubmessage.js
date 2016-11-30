@@ -3,7 +3,7 @@ import store from '../store';
 
 export default React.createClass({
   render() {
-    // console.log(store.clubs);
+    // console.log(store.session);
     return(
       <form onSubmit={this.handleMessage}>
         <textarea placeholder="Join the conversation!" ref="note" />
@@ -11,10 +11,10 @@ export default React.createClass({
       </form>
     )
   },
-  handleMessage() {
+  handleMessage(e) {
     e.preventDefault();
     let message = this.refs.note.value;
-    let timestamp = new Date();
-    store.clubs.get(this.props.clubId).addMessageToClub({message, timestamp});
+    let email = window.localStorage.getItem('email');
+    store.clubs.get(this.props.clubId).addMessageToClub({message, email});
   }
 });

@@ -24,7 +24,7 @@ export default React.createClass({
     store.clubs.off('update change', this.updateState);
   },
   render() {
-    // console.log(this.state.club.objectId);
+    // console.log(this.state.club.Messages);
     return(
       <div>
         <h2>{this.props.params.name}</h2>
@@ -33,7 +33,7 @@ export default React.createClass({
         <Link to = {`/clubs/${this.props.params.name}/currentbook`}>Current Book</Link>
         <Link to = {`/clubs/${this.props.params.name}/pastbooks`}>Past Books</Link>
         <Link to = {`/clubs/${this.props.params.name}/futurebooks`}>Future Books</Link>
-          <ClubMessages clubId={this.state.club.objectId}/>
+          <ClubMessages messages={this.state.club.Messages} clubId={this.state.club.objectId}/>
       </div>
     )
   },

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default React.createClass({
   render() {
-    // console.log(this.props.book.best_book);
+    console.log(this.props.book.best_book);
     return (
       <li>
         <span>{this.props.book.best_book.title}</span>
@@ -14,6 +14,9 @@ export default React.createClass({
   },
   handleAdd(e) {
     e.preventDefault();
-    console.log('add book');
+    let title = {this.props.book.best_book.title}
+    let img = {this.props.book.best_book.image_url}
+    let author = {this.props.book.best_book.author.name}
+    console.log(title, img, author);
   }
 });

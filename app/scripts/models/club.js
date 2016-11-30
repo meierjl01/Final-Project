@@ -7,22 +7,24 @@ export default Backbone.Model.extend({
     defaults: {
         name: '',
         description: '',
-        // currentBook: '',
-        // pastBooks: [],
-        // futureBooks: [],
     },
-    addMessageToClub({message, timestamp}) {
+    addMessageToClub({message, email}) {
         this.save({
-            Messages: [{
+            Messages: this.get('Messages').concat([{
                 ___class: 'messages',
                 body: message,
-                timestamp: timestamp
-            }]
+                email: email,
+            }])
         });
     },
-    // addBookToFuture() {
-    //
-    // },
+    addBookToFuture() {
+        this.save({
+            Future: this.get('Future').concat([{
+                ___class: 'future',
+                
+            }])
+        });
+    },
     // addBookToCurrent(){
     //
     // },

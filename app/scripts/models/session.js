@@ -16,7 +16,6 @@ export default Backbone.Model.extend({
     idAttribute: 'objectId',
 
     defaults: {
-        username: '',
         email: '',
         'user-token': '',
         authenticated: false,
@@ -26,13 +25,12 @@ export default Backbone.Model.extend({
         if (password === confirmPW) return true;
     },
 
-    register(email, username, password) {
+    register(email, password) {
         $.ajax({
             type: 'POST',
             url: 'https://api.backendless.com/v1/users/register',
             contentType: 'application/json',
             data: JSON.stringify({
-                username,
                 email,
                 password
             }),
@@ -59,6 +57,7 @@ export default Backbone.Model.extend({
                 window.localStorage.setItem('user-token', response['user-token']);
                 // window.localStorage.setItem('username', reponse.username);
                 window.localStorage.setItem('ownerId', response.ownerId);
+                window.localStorage.setItem('email', response.email);
                 browserHistory.push("/clubs");
             }
         });
