@@ -21,16 +21,36 @@ export default Backbone.Model.extend({
         this.save({
             future: this.get('future').concat([{
                 ___class: 'Future',
-                title: title,
-                rating: rating,
-                image: image,
-                author: author,
+                title,
+                rating,
+                image,
+                author,
             }])
         });
     },
-    // addBookToCurrent(){
-    //filter (to remove from future) and add (to current)-- two methods
-    // },
+// filter (to remove from future) and add (to current)-- two methods
+    addToCurrent({title, rating, image, author}){
+      this.save({
+        current: this.get('current').concat([{
+              ___class: 'Current',
+              title,
+              rating,
+              image,
+              author,
+        }])
+      })
+      this.removeFromFuture({title})
+    },
+    removeFromFuture({title}) {
+      var newFuture = this.get('future').filter((future, i, arr) => {
+        if(title !== future.title) {
+            return true;
+        }
+      })
+      this.save({
+        future: newFuture
+      })
+    },
     // addMessageToCurrent() {
     //
     // },

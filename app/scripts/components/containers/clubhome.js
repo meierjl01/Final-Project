@@ -2,8 +2,8 @@ import React from 'react';
 import store from '../../store';
 import ClubMessages from '../clubmessages';
 import Search from '../search';
-import FutureBooks from '../futurebooks';
 import { Link } from 'react-router';
+import $ from 'jquery';
 
 export default React.createClass({
   getInitialState() {
@@ -25,16 +25,24 @@ export default React.createClass({
     store.clubs.off('update change', this.updateState);
   },
   render() {
-    // console.log(this.state.club);
+    // console.log(this.state.club.current);
+    let childrenWithProps = React.Children.map(this.props.children, (child, i, arr) => {
+      return React.cloneElement(child, {
+        clubId : this.state.club.objectId,
+        future: this.state.club.future || [],
+        current: this.state.club.current || [],
+      })
+    })
     return(
-      <div>
+      <div className="club-home">
         <h2>{this.props.params.name}</h2>
         <span>{this.state.club.description}</span>
         <Search clubId={this.state.club.objectId}/>
         <Link to = {`/clubs/${this.props.params.name}/currentbook`}>Current Book</Link>
         <Link to = {`/clubs/${this.props.params.name}/pastbooks`}>Past Books</Link>
-        <Link to = {`/clubs/${this.props.params.name}/futurebooks`}><FutureBooks future={this.state.club.future}/></Link>
+        <Link to = {`/clubs/${this.props.params.name}/futurebooks`}>FutureBooks</Link>
         <ClubMessages messages={this.state.club.Messages} clubId={this.state.club.objectId}/>
+        {childrenWithProps}
       </div>
     )
   },

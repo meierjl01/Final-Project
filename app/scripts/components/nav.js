@@ -24,8 +24,8 @@ export default React.createClass({
     if(this.state.authenticated) {
       nav = (
         <nav className="logged-in">
-          <Link to = "/clubs">Home</Link>
-          <Link to = "/clubs/new">Create A Club</Link>
+          <Link to = "/clubs"><i className="fa fa-home" aria-hidden="true"></i>   Home</Link>
+          <Link to = "/clubs/new"><i className="fa fa-book" aria-hidden="true"></i>   Create A Club</Link>
           <input type = "submit" className="logout" onClick={this.handleLogout} value="Log Out"/>
         </nav>
       )

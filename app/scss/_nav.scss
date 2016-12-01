@@ -1,20 +1,35 @@
-body {
-  // text-align: center;
-}
-
 .logged-out {
-  a {
-    border: 2px solid black;
-    padding: 1em;
-    margin: 0 auto;
-    margin-bottom: 1em;
-    border-radius: 10%;
-    color: black;
-    display: block;
-    width: 7%;
-  }
+    a {
+        text-align: center;
+        border: 2px solid black;
+        padding: 1em;
+        margin: 0 auto 1em;
+        border-radius: 10%;
+        color: black;
+        display: block;
+        width: 9%;
+    }
 }
 
 .logged-in {
+    float: right;
+    display: inline-block;
 
+    a {
+        color: black;
+        font-size: .75em;
+        padding: 0.5em;
+        margin: .5em;
+        text-align: center;
+    }
+
+    .logout {
+        background: white;
+        font-size: .75em;
+        border: none;
+        border-radius: 15%;
+        padding: 0.5em;
+        margin: .5em;
+        text-align: center;
+    }
 }

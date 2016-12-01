@@ -20,10 +20,11 @@ const router = (
       <Route path="/register" component={Register} />
       <Route path="/clubs" component={Clubs} />
       <Route path="/clubs/new" component={NewClub} />
-      <Route path="/clubs/:name" component={ClubHome} />
-      <Route path="/clubs/:name/currentbook" component={CurrentBook} />
-      <Route path="/clubs/:name/futurebooks" component={FutureBooks} />
-      <Route path="/clubs/:name/pastbooks" component={PastBooks} />
+      <Route path="/clubs/:name" component={ClubHome}>
+        <Route path="/clubs/:name/currentbook" component={CurrentBook} />
+        <Route path="/clubs/:name/futurebooks" component={FutureBooks} />
+        <Route path="/clubs/:name/pastbooks" component={PastBooks} />
+      </Route>
     </Route>
   </Router>
 );

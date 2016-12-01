@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router';
 import store from '../store';
 
 export default React.createClass({
@@ -10,7 +9,6 @@ export default React.createClass({
         <input ref="password" type="password" placeholder="Password" />
         <input ref="confirmpw" type="password" placeholder="Confirm Password" />
         <input ref="register" type="submit" value="Register Now" />
-        <div>Already a member? <Link to="login">Log In Now</Link></div>
       </form>
     )
   },
