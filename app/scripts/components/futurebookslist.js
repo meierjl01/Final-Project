@@ -4,9 +4,7 @@ export default React.createClass({
   render() {
     return (
       <div>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>book</li>
         <li></li>
       </div>
     )

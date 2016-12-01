@@ -17,16 +17,19 @@ export default Backbone.Model.extend({
             }])
         });
     },
-    addBookToFuture() {
+    addToFuture({title, rating, image, author}) {
         this.save({
-            Future: this.get('Future').concat([{
-                ___class: 'future',
-                
+            future: this.get('future').concat([{
+                ___class: 'Future',
+                title: title,
+                rating: rating,
+                image: image,
+                author: author,
             }])
         });
     },
     // addBookToCurrent(){
-    //
+    //filter (to remove from future) and add (to current)-- two methods
     // },
     // addMessageToCurrent() {
     //

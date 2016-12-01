@@ -17,14 +17,14 @@ export default React.createClass ({
     store.books.off('update change', this.updateState);
   },
   render() {
-    // console.log(this.state.books);
+    // console.log(this.props.clubId);
     return (
       <div>
       <form onSubmit={this.handleSearch} className="search-div">
         <input ref="title" className="book-search" type="text" placeholder="search for a book"/>
         <input className="search" type="submit" value="Search" />
       </form>
-        <SearchList books={this.state.books}/>
+        <SearchList clubId={this.props.clubId} books={this.state.books}/>
       </div>
     )
   },

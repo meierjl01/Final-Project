@@ -4,9 +4,10 @@ import SearchItem from './searchitem';
 export default React.createClass({
   render() {
     // console.log(this.props.books);
+    // console.log(this.props.clubId);
     let BooksList = this.props.books.map((book, i, arr) => {
       return (
-        <SearchItem key={i} book={book}/>
+        <SearchItem clubId={this.props.clubId} key={i} book={book}/>
       )
     });
     return (
