@@ -15,12 +15,12 @@ export default React.createClass({
     )
   },
   handleCurrent(e) {
-    e.preventDefault;
+    e.preventDefault();
     let title = this.props.future.title;
     let rating = this.props.future.rating;
     let image = this.props.future.image;
     let author = this.props.future.author;
-    // console.log(title, rating, image, author);
+    console.log(title, rating, image, author);
     store.clubs.get(this.props.clubId).addToCurrent({title, rating, image, author});
   }
 });

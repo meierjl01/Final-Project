@@ -31,13 +31,13 @@ export default Backbone.Model.extend({
 // filter (to remove from future) and add (to current)-- two methods
     addToCurrent({title, rating, image, author}){
       this.save({
-        current: this.get('current').concat([{
+        current: [{
               ___class: 'Current',
               title,
               rating,
               image,
               author,
-        }])
+        }]
       })
       this.removeFromFuture({title})
     },
@@ -51,10 +51,29 @@ export default Backbone.Model.extend({
         future: newFuture
       })
     },
-    // addMessageToCurrent() {
-    //
+    addMessageToCurrent() {
+
+    },
+    // addToRead({title, rating, image, author}) {
+    // this.save({
+    //   read: this.get('read').concat([{
+    //     ___class: 'Read',
+    //     title,
+    //     rating,
+    //     image,
+    //     author,
+    //   }])
+    // })
+    //this.removeFromCurrent({title})
     // },
-    // addBookToRead() {
-    //
-    // }
+    // removeFromCurrent({title}) {
+    //   var newCurrent = this.get('current').filter((current, i, arr) => {
+    //     if(title !== current.title) {
+  //   return true;
+  // }
+    //   })
+    //this.save({
+    // current: newCurrent
+  // })
+    // },
 });
