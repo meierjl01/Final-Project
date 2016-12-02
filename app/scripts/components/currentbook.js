@@ -4,14 +4,14 @@ import NewCurrentBookMessage from './newcurrentbookmessage';
 
 export default React.createClass({
   render() {
-    console.log(this.props.current);
-      let currentBook = this.props.current.map((current, i, arr) => {
+    console.log(this.props.Current);
+      let currentBook = this.props.Current.map((Current, i, arr) => {
         return (
           <div key={i}>
-            {current.title}
-            {current.rating}
-            <img src={current.image} />
-            {current.author}
+            {Current.title}
+            {Current.rating}
+            <img src={Current.image} />
+            {Current.author}
             <input type="submit" onClick={this.handleRead} value="Add to Read"/>
           </div>
         )
@@ -27,11 +27,11 @@ export default React.createClass({
   },
   handleRead(e) {
     e.preventDefault;
-    let title = this.props.future.title;
-    let rating = this.props.future.rating;
-    let image = this.props.future.image;
-    let author = this.props.future.author;
-    console.log(title, rating, image, author);
-    // store.clubs.get(this.props.clubId).addToRead({title, rating, image, author});
+    let title = this.props.current.title;
+    let rating = this.props.current.rating;
+    let image = this.props.current.image;
+    let author = this.props.current.author;
+    // console.log(title, rating, image, author);
+    store.clubs.get(this.props.clubId).addToRead({title, rating, image, author});
   }
 });

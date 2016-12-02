@@ -17,7 +17,7 @@ export default React.createClass ({
     store.books.off('update change', this.updateState);
   },
   render() {
-    // console.log(this.props.clubId);
+    // console.log(this.props.club);
     return (
       <div>
       <form onSubmit={this.handleSearch} className="search-div">

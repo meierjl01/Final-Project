@@ -3,7 +3,7 @@ import SearchItem from './searchitem';
 
 export default React.createClass({
   render() {
-    // console.log(this.props.books);
+    // console.log(this.props);
     // console.log(this.props.clubId);
     let BooksList = this.props.books.map((book, i, arr) => {
       return (

@@ -21,6 +21,5 @@ export default React.createClass({
     let image = this.props.book.best_book.image_url;
     let author = this.props.book.best_book.author.name;
     store.clubs.get(this.props.clubId).addToFuture({title, rating, image, author});
-    // console.log(title, rating, image, author);
   }
 });
