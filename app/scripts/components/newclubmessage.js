@@ -3,7 +3,7 @@ import store from '../store';
 
 export default React.createClass({
   render() {
-    // console.log(store.session);
+    // console.log(this.props.clubId);
     return(
       <form onSubmit={this.handleMessage}>
         <textarea placeholder="Join the conversation!" ref="note" />

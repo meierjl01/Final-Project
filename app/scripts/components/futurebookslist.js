@@ -17,7 +17,7 @@ export default React.createClass({
   handleCurrent(e) {
     e.preventDefault();
     let objectId = this.props.Future.objectId;
-    // console.log(objectId);
+    // console.log(this.props.Current[0]);
     store.clubs.get(this.props.clubId).addToCurrent(objectId);
   }
 });
