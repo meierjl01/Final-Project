@@ -21,7 +21,7 @@ export default React.createClass({
       <div>
         <h3>Current Book</h3>
         {currentBook}
-        <CurrentBookMessages />
+        <CurrentBookMessages current={this.props.Current[0]}/>
         <NewCurrentBookMessage clubId={this.props.clubId} current={this.props.Current[0]}/>
       </div>
     )

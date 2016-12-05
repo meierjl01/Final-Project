@@ -1,12 +1,10 @@
 import React from 'react';
-import $ from 'jquery';
-import store from '../store';
 
 export default React.createClass({
   getInitialState() {
-    return {
+    return{
       editing: false,
-      owned: false
+      owned: false,
     }
   },
   componentDidMount() {
@@ -15,7 +13,7 @@ export default React.createClass({
     }
   },
   render() {
-// console.log(this.props.clubId);
+    // console.log(this.props.bookId);
     if(this.state.editing === false && this.state.owned === false) {
       return (
         <li>
@@ -43,14 +41,13 @@ export default React.createClass({
       </form>
     )
   }
-
-  },
+},
   handleSave(e) {
     e.preventDefault();
     let message = this.refs.note.value;
     let email = window.localStorage.getItem('email');
     let objectId = this.props.message.objectId;
-    store.clubs.get(this.props.clubId).saveEditedClubMessage({message, email, objectId});
+    // store.clubs.get(this.props.bookId).saveEditedBookMessage({message, email, objectId});
     this.setState({
       editing: false,
     })
@@ -64,6 +61,6 @@ export default React.createClass({
   handleDelete(e) {
     e.preventDefault();
     // console.log(this.props.message.objectId);
-    store.clubs.get(this.props.clubId).deleteMessage(this.props.message.objectId);
+    // store.clubs.get(this.props.clubId).deleteMessage(this.props.message.objectId);
   },
 });

@@ -1,150 +1,156 @@
 import Backbone from 'backbone';
 import browserHistory from 'react-router';
+import $ from 'jquery';
 
 export default Backbone.Model.extend({
-            urlRoot: 'https://api.backendless.com/v1/data/clubs',
-            idAttribute: 'objectId',
+    urlRoot: 'https://api.backendless.com/v1/data/clubs',
+    idAttribute: 'objectId',
 
-            defaults: {
-                name: '',
-                description: '',
-                Past: [],
-                Current: [],
-            },
-            addMessageToClub({
+    defaults: {
+        name: '',
+        description: '',
+        Past: [],
+        Current: [],
+    },
+
+    addMessageToBook({
+        message,
+        email,
+        bookId
+    }) {
+      console.log(this.get('bookmessages'));
+        $.ajax({
+            type: 'PUT',
+            url: `https://api.backendless.com/v1/data/Books/${bookId}`,
+            contentType: 'application/json',
+            data: JSON.stringify({
+                //concat and add to old list
+                bookmessages: this.get('bookmessages').concat([{
+                  message,
+                  email,
+                  ___class:'BookMessages'
+                }])
+            }),
+            success: (response) => {
+              // console.log('book message saved successfully');
+              this.fetch(response);
+            }
+        })
+    },
+
+    addMessageToClub({
+        message,
+        email
+    }) {
+        // console.log(this);
+        this.save({
+            Messages: this.get('Messages').concat([{
+                ___class: 'messages',
                 message,
-                email
-            }) {
-                // console.log(this);
-                this.save({
-                    Messages: this.get('Messages').concat([{
-                        ___class: 'messages',
-                        body: message,
-                        email: email,
-                    }])
-                });
-            },
-            deleteMessage(objectId) {
-                // Messages: this.get('Messages')
-                console.log(this.get('Messages'));
-                        var newMessages = this.get('Messages').filter((Message, i, arr) => {
-                            if (objectId !== Message.objectId) {
-                                return true
-                            }
-                        })
-                        this.save({
-                            Messages: newMessages,
-                        })
-                    },
-                    addMessageToBook({
-                        message,
-                        objectId,
-                        email
-                    }) {
-                        // console.log(this.get('bookmessages'));
-                        this.save({
-                            bookmessages: this.get('bookmessages').concat([{
-                                ___class: 'BookMessages',
-                                message,
-                                objectId,
-                                email,
-                            }])
-                        });
-                    },
+                email,
+            }])
+        });
+    },
+//do a delete ajax request instead
+    deleteMessage(objectId) {
+        var newMessages = this.get('Messages').filter((Message, i, arr) => {
+            if (objectId !== Message.objectId) {
+                return true
+            }
+        })
+        this.save({
+            Messages: newMessages,
+        })
+    },
 
-                    addToFuture({
-                        title,
-                        rating,
-                        image,
-                        author
-                    }) {
-                        this.save({
-                            Future: this.get('Future').concat([{
-                                ___class: 'Books',
-                                title,
-                                rating,
-                                image,
-                                author,
-                            }])
-                        });
-                        // browserHistory.push("/clubs/:name/futurebooks");
-                    },
-                    addToCurrent(objectId) {
-                        // console.log('future', this.get('Future'));
-                        // console.log('current', this.get('Current'));
-                        // console.log('read', this.get('Read'));
-                        var newFuture = this.get('Future').filter((Future, i, arr) => {
-                            if (objectId !== Future.objectId) {
-                                return true
-                            }
-                        })
+    saveEditedClubMessage({
+        message,
+        objectId
+    }) {
+        $.ajax({
+            type: 'PUT',
+            url: `https://api.backendless.com/v1/data/messages/${objectId}`,
+            contentType: 'application/json',
+            data: JSON.stringify({
+                message,
+            }),
+            success: (response) => {
+                // console.log('message edited', this.get('Messages'));
+                this.fetch(response)
+            }
+        });
+    },
 
-                        var newCurrent = {
-                            ___class: 'Books',
-                            objectId
-                        }
+    addToFuture({
+        title,
+        rating,
+        image,
+        author
+    }) {
+        this.save({
+            Future: this.get('Future').concat([{
+                ___class: 'Books',
+                title,
+                rating,
+                image,
+                author,
+            }])
+        });
+        // browserHistory.push("/clubs/:name/futurebooks");
+    },
+    addToCurrent(objectId) {
+        var newFuture = this.get('Future').filter((Future, i, arr) => {
+            if (objectId !== Future.objectId) {
+                return true
+            }
+        })
 
-                        let newPast;
+        var newCurrent = {
+            ___class: 'Books',
+            objectId
+        }
 
-                        if (this.get('Current')[0]) {
-                        if (this.get('Current')[0].objectId === this.get('Current')[0].objectId) {
+        let newPast;
 
-                            newPast = this.get('Past').concat([{
-                                ___class: 'Books',
-                                objectId: this.get('Current')[0].objectId
-                            }])
+        if (this.get('Current')[0]) {
+            if (this.get('Current')[0].objectId === this.get('Current')[0].objectId) {
 
-                        }
-                      }
-                        // console.log('future', newFuture, 'current', newCurrent, 'past', newPast);
-                        this.save({
-                            Future: newFuture,
-                            Current: newCurrent,
-                            Past: newPast
-                        })
-                    },
+                newPast = this.get('Past').concat([{
+                    ___class: 'Books',
+                    objectId: this.get('Current')[0].objectId
+                }])
 
-                    addToPast({
-                        objectId
-                    }) {
-                        // console.log('future', this.get('Future'));
-                        // console.log('current', this.get('Current'));
-                        // console.log('past', this.get('Past'));
-                        let newPast;
-                        // this.get('Current')[0].objectId}
-                        if (this.get('Past')[0]) {
-                        newPast = this.get('Past').concat([{
-                            ___class: 'Books',
-                            objectId
-                        }])
-                      } else {
-                        newPast =
-                        [{
-                            ___class: 'Books',
-                            objectId: this.get('Current')[0].objectId,
-                        }]
-                      }
-                      let newCurrent = [];
+            }
+        }
+        // console.log('future', newFuture, 'current', newCurrent, 'past', newPast);
+        this.save({
+            Future: newFuture,
+            Current: newCurrent,
+            Past: newPast
+        })
+    },
 
-                        this.save({
-                                Past: newPast,
-                                Current: newCurrent
-                            })
-                            // this.save({
-                            //   read: this.get('read').concat([{
-                            //     ___class: 'Read',
-                            //     title,
-                            //     rating,
-                            //     image,
-                            //     author,
-                            //   }])
-                            // })
-                            // this.removeFromCurrent({title})
-                            // },
-                            // removeFromCurrent({title}) {
-                            //   var newCurrent = this.get('current').filter((current, i, arr) => {
-                            //     if(title !== current.title) {
-                            // return true;
-                            // }
-                    },
-            });
+    addToPast({
+        objectId
+    }) {
+        let newPast;
+        // this.get('Current')[0].objectId}
+        if (this.get('Past')[0]) {
+            newPast = this.get('Past').concat([{
+                ___class: 'Books',
+                objectId
+            }])
+        } else {
+            newPast = [{
+                ___class: 'Books',
+                objectId: this.get('Current')[0].objectId,
+            }]
+        }
+        let newCurrent = [];
+
+        this.save({
+                Past: newPast,
+                Current: newCurrent
+            })
+    },
+});

@@ -6,7 +6,7 @@ export default React.createClass({
     // console.log(this.props.current);
     return (
       <form className="current-book-message" onSubmit={this.handleNewMessage}>
-        <textarea placeholder="Join the conversation!" ref="message" />
+        <textarea placeholder="Join the conversation about this book" ref="message" />
         <input type="submit" value="Publish" />
       </form>
     )
@@ -15,8 +15,8 @@ export default React.createClass({
     e.preventDefault();
     let message = this.refs.message.value;
     let email = window.localStorage.getItem('email');
-    let objectId = this.props.current.objectId;
-    console.log(message, objectId, email);
-    store.clubs.get(this.props.clubId).addMessageToBook({message, objectId, email});
+    let bookId = this.props.current.objectId;
+    // console.log(message, objectId, email);
+    store.clubs.get(this.props.clubId).addMessageToBook({message, bookId, email});
   }
 })
