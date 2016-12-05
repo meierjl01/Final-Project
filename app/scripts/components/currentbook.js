@@ -30,6 +30,6 @@ export default React.createClass({
     e.preventDefault;
     // console.log(this.props.Current[0].objectId);
     let objectId = this.props.Current[0].objectId;
-    store.clubs.get(this.props.clubId).addToRead(objectId);
+    store.clubs.get(this.props.clubId).addToPast(objectId);
   }
 });

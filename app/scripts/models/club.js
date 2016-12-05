@@ -86,6 +86,7 @@ export default Backbone.Model.extend({
 
                         let newPast;
 
+                        if (this.get('Current')[0]) {
                         if (this.get('Current')[0].objectId === this.get('Current')[0].objectId) {
 
                             newPast = this.get('Past').concat([{
@@ -94,6 +95,7 @@ export default Backbone.Model.extend({
                             }])
 
                         }
+                      }
                         // console.log('future', newFuture, 'current', newCurrent, 'past', newPast);
                         this.save({
                             Future: newFuture,
@@ -102,21 +104,31 @@ export default Backbone.Model.extend({
                         })
                     },
 
-                    addToRead({
+                    addToPast({
                         objectId
                     }) {
-                        console.log('future', this.get('Future'));
-                        console.log('current', this.get('Current'));
-                        console.log('past', this.get('Past'));
-
+                        // console.log('future', this.get('Future'));
+                        // console.log('current', this.get('Current'));
+                        // console.log('past', this.get('Past'));
+                        let newPast;
                         // this.get('Current')[0].objectId}
-                        let newPast = this.get('Past').concat([{
+                        if (this.get('Past')[0]) {
+                        newPast = this.get('Past').concat([{
                             ___class: 'Books',
-                            objectId: objectId
+                            objectId
                         }])
+                      } else {
+                        newPast =
+                        [{
+                            ___class: 'Books',
+                            objectId: this.get('Current')[0].objectId,
+                        }]
+                      }
+                      let newCurrent = [];
 
                         this.save({
-                                Past: newPast
+                                Past: newPast,
+                                Current: newCurrent
                             })
                             // this.save({
                             //   read: this.get('read').concat([{
