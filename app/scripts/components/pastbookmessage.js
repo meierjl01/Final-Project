@@ -2,7 +2,7 @@ import React from 'react';
 
 export default React.createClass({
   render() {
-    console.log(this.props.message);
+    // console.log(this.props.message);
     return (
       <li>
       On {new Date(this.props.message.created).toString()}

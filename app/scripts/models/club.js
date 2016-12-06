@@ -18,22 +18,31 @@ export default Backbone.Model.extend({
         email,
         bookId
     }) {
-      console.log(this.get('bookmessages'));
+        // console.log(this.get('bookmessages'));
+        let bookmessages;
+        if (this.get('bookmessages')) {
+            bookmessages = this.get('bookmessages').concat([{
+                message,
+                email,
+                ___class: 'BookMessages'
+            }])
+        } else {
+            bookmessages = [{
+                ___class: 'BookMessages',
+                message,
+                email
+            }]
+        }
         $.ajax({
             type: 'PUT',
             url: `https://api.backendless.com/v1/data/Books/${bookId}`,
             contentType: 'application/json',
             data: JSON.stringify({
-                //concat and add to old list
-                bookmessages: this.get('bookmessages').concat([{
-                  message,
-                  email,
-                  ___class:'BookMessages'
-                }])
+                bookmessages
             }),
             success: (response) => {
-              // console.log('book message saved successfully');
-              this.fetch(response);
+                // console.log('book message saved successfully');
+                this.fetch(response);
             }
         })
     },
@@ -51,7 +60,6 @@ export default Backbone.Model.extend({
             }])
         });
     },
-//do a delete ajax request instead
     deleteMessage(objectId) {
         var newMessages = this.get('Messages').filter((Message, i, arr) => {
             if (objectId !== Message.objectId) {
@@ -60,6 +68,42 @@ export default Backbone.Model.extend({
         })
         this.save({
             Messages: newMessages,
+        }, {
+            success: () => {
+                $.ajax({
+                    type: 'DELETE',
+                    url: `https://api.backendless.com/v1/data/messages/${objectId}`,
+                    success: () => {
+                        console.log('message deleted')
+                    },
+                    error: () => {
+                        console.log('message delete didn\'t work');
+                    }
+                })
+            }
+        })
+    },
+    deleteMessage(objectId) {
+        var newMessages = this.get('Messages').filter((Message, i, arr) => {
+            if (objectId !== Message.objectId) {
+                return true
+            }
+        })
+        this.save({
+            Messages: newMessages,
+        }, {
+            success: () => {
+                $.ajax({
+                    type: 'DELETE',
+                    url: `https://api.backendless.com/v1/data/messages/${objectId}`,
+                    success: () => {
+                        console.log('message deleted')
+                    },
+                    error: () => {
+                        console.log('message delete didn\'t work');
+                    }
+                })
+            }
         })
     },
 
@@ -149,8 +193,8 @@ export default Backbone.Model.extend({
         let newCurrent = [];
 
         this.save({
-                Past: newPast,
-                Current: newCurrent
-            })
+            Past: newPast,
+            Current: newCurrent
+        })
     },
 });

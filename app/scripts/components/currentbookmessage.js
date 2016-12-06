@@ -60,7 +60,7 @@ export default React.createClass({
   },
   handleDelete(e) {
     e.preventDefault();
-    // console.log(this.props.message.objectId);
-    // store.clubs.get(this.props.clubId).deleteMessage(this.props.message.objectId);
+    // console.log(this.props);
+    // store.clubs.get(this.props.bookId).deleteBookMessage(this.props.message.objectId);
   },
 });
