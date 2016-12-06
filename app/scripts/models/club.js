@@ -40,19 +40,13 @@ export default Backbone.Model.extend({
             data: JSON.stringify({
                 bookmessages
             }),
-            success: (response) => {
+            success: () => {
                 // console.log('book message saved successfully');
-                this.fetch(response);
+                this.fetch();
             }
         })
     },
-//add another argument to the function that's a callback -- success callback
-//it would set state to fetching is false on that component
-//invoke it when ssuccess happens
-//fetching is false to start out -- click button -- when the below function is successfull set state again
 
-
-//in click handler:
     addMessageToClub({
         message,
         email
@@ -66,6 +60,7 @@ export default Backbone.Model.extend({
             }])
         });
     },
+
     deleteMessage(objectId) {
         var newMessages = this.get('Messages').filter((Message, i, arr) => {
             if (objectId !== Message.objectId) {
@@ -99,7 +94,7 @@ export default Backbone.Model.extend({
         if (newbookmessages.length === 0) {
           newbookmessages = null
         }
-        console.log(newbookmessages);
+        // console.log(newbookmessages);
         this.save({
             bookmessages: newbookmessages,
         }, {
@@ -146,9 +141,9 @@ export default Backbone.Model.extend({
             data: JSON.stringify({
                 message,
             }),
-            success: (response) => {
+            success: () => {
                 // console.log('message edited', this.get('Messages'));
-                this.fetch(response)
+                this.fetch()
             }
         });
     },

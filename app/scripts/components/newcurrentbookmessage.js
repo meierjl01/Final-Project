@@ -3,13 +3,18 @@ import store from '../store';
 
 export default React.createClass({
   render() {
-    // console.log(this.props.current);
-    return (
-      <form className="current-book-message" onSubmit={this.handleNewMessage}>
-        <textarea placeholder="Join the conversation about this book" ref="message" />
-        <input type="submit" value="Publish" />
-      </form>
-    )
+    if (this.props === undefined) {
+      return (
+        <div />
+      )
+    } else {
+      return(
+        <form className="current-book-message" onSubmit={this.handleNewMessage}>
+          <textarea placeholder="Join the conversation about this book" ref="message" />
+          <input type="submit" value="Publish" />
+        </form>
+      )
+    }
   },
   handleNewMessage(e) {
     e.preventDefault();

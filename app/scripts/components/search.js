@@ -10,8 +10,6 @@ export default React.createClass ({
   },
   componentDidMount() {
     store.books.on('update change', this.updateState);
-    store.books.reset();
-    store.books.trigger('update');
   },
   componentWillUnmount() {
     store.books.off('update change', this.updateState);

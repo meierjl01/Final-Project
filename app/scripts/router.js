@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Route, Router, browserHistory } from 'react-router';
 
-import session from './store';
+import store from './store';
 import App from './components/containers/app';
 import Clubs from './components/clubs';
 import NewClub from './components/newclub';
@@ -13,9 +13,18 @@ import CurrentBook from './components/currentbook';
 import FutureBooks from './components/futurebooks';
 import PastBooks from './components/pastbooks';
 
+//onChange takes prevState, nextState, replace, callback
+
+function onChange(prevState, nextState, replace) {
+  // console.log(store.books.toJSON());
+  store.books.reset();
+  store.books.trigger('update');
+  // console.log(store.books.toJSON());
+};
+
 const router = (
   <Router history = {browserHistory}>
-    <Route path="/" component={App}>
+    <Route onChange={onChange} path="/" component={App}>
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
       <Route path="/clubs" component={Clubs} />

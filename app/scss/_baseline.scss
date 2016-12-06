@@ -2,16 +2,17 @@ body {
   // background: url("../../assets/images/stacked.jpg") no-repeat center center;
   // background-size: cover;
   // background-attachment: fixed;
-    font-family: 'Quicksand' serif;
+    font-family: 'Quicksand', sans-serif;
+    margin: 2em;
 
   input {
     outline: none;
-    font-family: 'Quicksand' serif;
+    font-family: 'Quicksand', sans-serif;
   }
 
   a {
     text-decoration: none;
-    font-family: 'Quicksand' serif;
+    font-family: 'Quicksand', sans-serif;
   }
 
   li {

@@ -26,7 +26,7 @@ export default React.createClass({
       )
     })
     return (
-      <div>
+      <div className="home">
         <h2>App description</h2>
         <ul>{clubslist}</ul>
       </div>
