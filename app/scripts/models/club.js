@@ -46,7 +46,13 @@ export default Backbone.Model.extend({
             }
         })
     },
+//add another argument to the function that's a callback -- success callback
+//it would set state to fetching is false on that component
+//invoke it when ssuccess happens
+//fetching is false to start out -- click button -- when the below function is successfull set state again
 
+
+//in click handler:
     addMessageToClub({
         message,
         email

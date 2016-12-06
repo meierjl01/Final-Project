@@ -1,13 +1,14 @@
 import React from 'react';
 import store from '../store';
-import $ from 'jquery';
 
 export default React.createClass({
+  getInitialState() {
+    return {
+      disabled: false
+    }
+  },
   render() {
     console.log(this.props);
-    if(this.props === undefined) {
-      $('.publish-club-message').prop('disabled', true);
-    }
     return(
       <form onSubmit={this.handleMessage}>
         <textarea placeholder="Join the conversation!" ref="note" />
