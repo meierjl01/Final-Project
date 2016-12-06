@@ -5,7 +5,7 @@ import store from '../store';
 
 export default React.createClass({
   render() {
-    // console.log(this.props.Current[0]);
+    // console.log(this.props.clubId);
       let currentBook = this.props.Current.map((Current, i, arr) => {
         return (
           <div key={i}>
@@ -21,7 +21,7 @@ export default React.createClass({
       <div>
         <h3>Current Book</h3>
         {currentBook}
-        <CurrentBookMessages current={this.props.Current[0]}/>
+        <CurrentBookMessages clubId={this.props.clubId} current={this.props.Current[0]}/>
         <NewCurrentBookMessage clubId={this.props.clubId} current={this.props.Current[0]}/>
       </div>
     )

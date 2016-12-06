@@ -83,30 +83,52 @@ export default Backbone.Model.extend({
             }
         })
     },
-    deleteMessage(objectId) {
-        var newMessages = this.get('Messages').filter((Message, i, arr) => {
-            if (objectId !== Message.objectId) {
+    deleteBookMessage(objectId) {
+      // console.log(this.get('Current')[0].bookmessages);
+        var newbookmessages = this.get('Current')[0].bookmessages.filter((bookmessages, i, arr) => {
+            if (objectId !== bookmessages.objectId) {
                 return true
             }
         })
+        if (newbookmessages.length === 0) {
+          newbookmessages = null
+        }
+        console.log(newbookmessages);
         this.save({
-            Messages: newMessages,
+            bookmessages: newbookmessages,
         }, {
             success: () => {
                 $.ajax({
                     type: 'DELETE',
-                    url: `https://api.backendless.com/v1/data/messages/${objectId}`,
-                    success: () => {
-                        console.log('message deleted')
+                    url: `https://api.backendless.com/v1/data/BookMessages/${objectId}`,
+                    success: (response) => {
+                        console.log('book message deleted')
+                        this.fetch(response);
                     },
                     error: () => {
-                        console.log('message delete didn\'t work');
+                        console.log('book message delete didn\'t work');
                     }
                 })
             }
         })
     },
-
+    saveEditedBookMessage({
+        message,
+        messageId
+    }) {
+        $.ajax({
+            type: 'PUT',
+            url: `https://api.backendless.com/v1/data/BookMessages/${messageId}`,
+            contentType: 'application/json',
+            data: JSON.stringify({
+                message,
+            }),
+            success: (response) => {
+                console.log('message edited', this.get('Current')[0].bookmessages);
+                this.fetch(response)
+            }
+        });
+    },
     saveEditedClubMessage({
         message,
         objectId

@@ -17,6 +17,7 @@ export default React.createClass({
     let email = window.localStorage.getItem('email');
     let bookId = this.props.current.objectId;
     // console.log(message, objectId, email);
+    this.refs.message.value = "";
     store.clubs.get(this.props.clubId).addMessageToBook({message, bookId, email});
   }
 })

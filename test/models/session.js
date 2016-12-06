@@ -30,9 +30,9 @@ describe('session model testing', () => {
     expect(session.idAttribute).to.equal('objectId');
   });
 
-  it('should have a default username value of an empty string', () => {
-    expect(session.get('username')).to.equal('');
-  });
+  // it('should have a default username value of an empty string', () => {
+  //   expect(session.get('username')).to.equal('');
+  // });
 
   it('should have a default email value of an empty string', () => {
     expect(session.get('email')).to.equal('');

@@ -24,7 +24,7 @@ describe('book model', () => {
 
   it('should have an idAttribute of id', () => {
       expect(book).to.have.property('idAttribute');
-      expect(book.idAttribute).to.equal('id');
+      expect(book.idAttribute).to.equal('objectId');
   });
 
 });

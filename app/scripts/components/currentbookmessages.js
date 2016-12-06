@@ -3,7 +3,7 @@ import CurrentBookMessage from './currentbookmessage';
 
 export default React.createClass({
   render() {
-    // console.log(this.props.current);
+    // console.log(this.props.clubId);
     let currentmessages;
 
     if (this.props.current === undefined) {
@@ -11,7 +11,7 @@ export default React.createClass({
     } else
       currentmessages = this.props.current.bookmessages.map((bookmessage, i, arr) => {
       return (
-        <CurrentBookMessage bookId={this.props.current.objectId} message={bookmessage} key={i}/>
+        <CurrentBookMessage clubId={this.props.clubId} bookId={this.props.current.objectId} message={bookmessage} key={i}/>
       )
     })
     return (

@@ -1,4 +1,5 @@
 import React from 'react';
+import store from '../store';
 
 export default React.createClass({
   getInitialState() {
@@ -13,7 +14,7 @@ export default React.createClass({
     }
   },
   render() {
-    // console.log(this.props.bookId);
+    // console.log(this.props.clubId);
     if(this.state.editing === false && this.state.owned === false) {
       return (
         <li>
@@ -45,9 +46,9 @@ export default React.createClass({
   handleSave(e) {
     e.preventDefault();
     let message = this.refs.note.value;
-    let email = window.localStorage.getItem('email');
-    let objectId = this.props.message.objectId;
-    // store.clubs.get(this.props.bookId).saveEditedBookMessage({message, email, objectId});
+    // let email = window.localStorage.getItem('email');
+    let messageId = this.props.message.objectId;
+    store.clubs.get(this.props.clubId).saveEditedBookMessage({message, messageId});
     this.setState({
       editing: false,
     })
@@ -61,6 +62,6 @@ export default React.createClass({
   handleDelete(e) {
     e.preventDefault();
     // console.log(this.props);
-    // store.clubs.get(this.props.bookId).deleteBookMessage(this.props.message.objectId);
+    store.clubs.get(this.props.clubId).deleteBookMessage(this.props.message.objectId);
   },
 });
