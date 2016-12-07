@@ -3,14 +3,22 @@ import store from '../store';
 
 export default React.createClass({
   render() {
-    // console.log(this.props.clubId);
+      let button = <input ref="add" type="button" onClick={this.handleAdd} value="Add Book to Future Reads"/>
+    if (this.props.inPast === true) {
+      button = <input type="button" value="In Past Books Library" />
+    } else if (this.props.inFuture === true) {
+      button = <input type="button" value="Already In Future Books Library" />
+    } else if (this.props.inCurrent === true) {
+      button = <input type="button" value="Current Book" />
+    }
+    // console.log(this.props.inPast, this.props.inFuture, this.props.inCurrent);
     return (
       <li>
         <span>{this.props.book.best_book.title}</span>
         <span>Rating: {this.props.book.average_rating}</span>
         <img src={this.props.book.best_book.image_url} />
         <span>{this.props.book.best_book.author.name}</span>
-        <input ref="add" type="button" onClick={this.handleAdd} value="Add Book to Future Reads"/>
+        {button}
       </li>
     )
   },
@@ -21,5 +29,5 @@ export default React.createClass({
     let image = this.props.book.best_book.image_url;
     let author = this.props.book.best_book.author.name;
     store.clubs.get(this.props.clubId).addToFuture({title, rating, image, author});
-  }
+  },
 });

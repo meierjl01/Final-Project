@@ -1,6 +1,7 @@
 import React from 'react';
 import store from '../store';
 import ClubItem from './clubitem';
+import { Link } from 'react-router';
 
 export default React.createClass({
   getInitialState() {
@@ -26,9 +27,13 @@ export default React.createClass({
       )
     })
     return (
+      <div>
+      <h2 className="home-heading">Explore Our Bookclubs:</h2>
       <div className="home">
-        <h2>App description</h2>
         <ul>{clubslist}</ul>
+        <div>Dont see a club that interests you?</div>
+        <div><Link to ="/clubs/new">Create one!</Link></div>
+      </div>
       </div>
     )
   },

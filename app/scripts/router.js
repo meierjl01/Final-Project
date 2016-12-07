@@ -12,14 +12,13 @@ import ClubHome from './components/containers/clubhome';
 import CurrentBook from './components/currentbook';
 import FutureBooks from './components/futurebooks';
 import PastBooks from './components/pastbooks';
+import ClubMessages from './components/clubmessages';
 
 //onChange takes prevState, nextState, replace, callback
 
 function onChange(prevState, nextState, replace) {
-  // console.log(store.books.toJSON());
   store.books.reset();
   store.books.trigger('update');
-  // console.log(store.books.toJSON());
 };
 
 const router = (
@@ -30,6 +29,7 @@ const router = (
       <Route path="/clubs" component={Clubs} />
       <Route path="/clubs/new" component={NewClub} />
       <Route path="/clubs/:name" component={ClubHome}>
+        <Route path="/clubs/:name/messages" component={ClubMessages} />
         <Route path="/clubs/:name/currentbook" component={CurrentBook} />
         <Route path="/clubs/:name/futurebooks" component={FutureBooks} />
         <Route path="/clubs/:name/pastbooks" component={PastBooks} />

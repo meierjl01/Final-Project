@@ -1,21 +1,32 @@
 body {
-  // background: url("../../assets/images/stacked.jpg") no-repeat center center;
-  // background-size: cover;
-  // background-attachment: fixed;
     font-family: 'Quicksand', sans-serif;
-    margin: 2em;
+    color: $color-primary;
+    background-color: $color-secondary;
 
-  input {
-    outline: none;
-    font-family: 'Quicksand', sans-serif;
-  }
+    input {
+        outline: none;
+        font-family: 'Quicksand', sans-serif;
+        color: $color-primary;
+    }
 
-  a {
-    text-decoration: none;
-    font-family: 'Quicksand', sans-serif;
-  }
+    a {
+        text-decoration: none;
+        color: $color-primary;
+        background-color: $color-secondary;
+        font-family: 'Quicksand', sans-serif;
+    }
 
-  li {
-    list-style-type: none;
-  }
+    .fa {
+        color: $color-primary;
+        background-color: $color-secondary;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            list-style-type: none;
+        }
+    }
 }

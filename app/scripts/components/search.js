@@ -22,7 +22,7 @@ export default React.createClass ({
         <input ref="title" className="book-search" type="text" placeholder="search for a book"/>
         <input className="search" type="submit" value="Search" />
       </form>
-        <SearchList clubId={this.props.clubId} books={this.state.books}/>
+        <SearchList club={this.props.club} clubId={this.props.clubId} books={this.state.books}/>
       </div>
     )
   },
