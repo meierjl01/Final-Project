@@ -28,7 +28,7 @@ export default React.createClass({
     })
     return (
       <div>
-      <h2 className="home-heading">Explore Our Bookclubs:</h2>
+      <h2 className="heading">Explore Our Bookclubs:</h2>
       <div className="home">
         <ul>{clubslist}</ul>
         <div>Dont see a club that interests you?</div>
