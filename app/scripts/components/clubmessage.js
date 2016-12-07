@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import store from '../store';
+import { Link } from 'react-router';
 
 export default React.createClass({
   getInitialState() {
@@ -15,21 +16,21 @@ export default React.createClass({
     }
   },
   render() {
-// console.log(this.props.clubId);
+// console.log(this.props.message.ownerId);
     if(this.state.editing === false && this.state.owned === false) {
       return (
         <li>
           On {new Date(this.props.message.created).toString()}
-          {this.props.message.email} said:
-          "{this.props.message.message}"
+          <Link to={`/user/${this.props.message.ownerId}`}>{this.props.message.email}</Link>
+          said: "{this.props.message.message}"
         </li>
       );
     } else if (this.state.editing === false && this.state.owned === true) {
       return (
       <li>
         On {new Date(this.props.message.created).toString()}
-        {this.props.message.email} said:
-        "{this.props.message.message}"
+        <Link to={`/user/${this.props.message.ownerId}`}>{this.props.message.email}</Link>
+        said: "{this.props.message.message}"
         <input onClick={this.handleEdit} type="button" value="Edit"/>
         <input onClick={this.handleDelete} type="button" value="Delete"/>
       </li>

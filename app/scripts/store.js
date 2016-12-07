@@ -1,10 +1,11 @@
 import React from 'react';
 import Clubs from './collections/clubs';
 import Books from './collections/books';
-import Session from './models/session';
+import User from './models/user';
 
 export default {
-  session: new Session(),
+  user: new User(),
+  session: new User(),
   clubs: new Clubs(),
   books: new Books(),
 };

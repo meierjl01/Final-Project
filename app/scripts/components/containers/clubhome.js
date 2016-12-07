@@ -24,6 +24,7 @@ export default React.createClass({
     store.clubs.off('update change', this.updateState);
   },
   render() {
+    // console.log(this.state.club.Messages);
     let childrenWithProps = React.Children.map(this.props.children, (child, i, arr) => {
       return React.cloneElement(child, {
         clubId: this.state.club.objectId,

@@ -6,7 +6,7 @@ export default React.createClass({
     return (
       <li>
       On {new Date(this.props.message.created).toString()}
-      {this.props.message.email} said:
+      <Link to={`/user/${this.props.message.ownerId}`}>{this.props.message.email}</Link> said:
       "{this.props.message.message}"
       </li>
     )

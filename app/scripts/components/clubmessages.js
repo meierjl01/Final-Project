@@ -6,17 +6,17 @@ export default React.createClass({
   render() {
     let clubsmessages;
     // console.log(this.props);
-    if (this.props.messages === undefined) {
+    if (this.props.Messages === undefined) {
       clubsmessages = <div />
     } else {
-     clubsmessages = this.props.messages.map((message, i, arr) => {
+     clubsmessages = this.props.Messages.map((message, i, arr) => {
       return (
         <ClubMessage key={i} message={message} clubId={this.props.clubId}/>
       )
   })
 }
     return (
-      <div>
+      <div className="club-messages-container">
         Messages:
         <ul>{clubsmessages}</ul>
         <NewClubMessage clubId={this.props.clubId}/>

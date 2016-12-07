@@ -31,7 +31,7 @@ export default React.createClass({
       <h2 className="heading">Explore Our Bookclubs:</h2>
       <div className="home">
         <ul>{clubslist}</ul>
-        <div>Dont see a club that interests you?</div>
+        <div className="create-club-link">Dont see a club that interests you?</div>
         <div><Link to ="/clubs/new">Create one!</Link></div>
       </div>
       </div>

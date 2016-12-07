@@ -13,6 +13,7 @@ import CurrentBook from './components/currentbook';
 import FutureBooks from './components/futurebooks';
 import PastBooks from './components/pastbooks';
 import ClubMessages from './components/clubmessages';
+import UserProfile from './components/userprofile';
 
 //onChange takes prevState, nextState, replace, callback
 
@@ -28,6 +29,7 @@ const router = (
       <Route path="/register" component={Register} />
       <Route path="/clubs" component={Clubs} />
       <Route path="/clubs/new" component={NewClub} />
+      <Route path="/user/:id" component={UserProfile} />
       <Route path="/clubs/:name" component={ClubHome}>
         <Route path="/clubs/:name/messages" component={ClubMessages} />
         <Route path="/clubs/:name/currentbook" component={CurrentBook} />
