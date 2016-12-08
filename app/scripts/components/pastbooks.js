@@ -10,7 +10,7 @@ export default React.createClass({
       )
     })
     return (
-      <div>
+      <div className="past-container">
         <h3>Past Books</h3>
           {Past}
       </div>

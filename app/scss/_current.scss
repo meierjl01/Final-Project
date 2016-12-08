@@ -1,0 +1,22 @@
+.current-container {
+  text-align: center;
+  border: 1px $color-primary solid;
+  width: 45%;
+  padding: 4em;
+  margin: 2em auto;
+  margin-top: 0; 
+  line-height: 1.7em;
+
+  .current-book-messages {
+    margin: 2em 0 2em 0;
+    line-height: 1.5em;
+  }
+
+  .current-book-message {
+    margin: 2em 0 2em 0;
+  }
+
+  .publish-book-note {
+    // text-align: left;
+  }
+}

@@ -9,16 +9,16 @@ export default React.createClass({
       let currentBook = this.props.Current.map((Current, i, arr) => {
         return (
           <div key={i}>
-            {Current.title}
-            {Current.rating}
+            <div>{Current.title}</div>
+            <div>By: {Current.author}</div>
             <img src={Current.image} />
-            {Current.author}
+            <div>Rating: {Current.rating}</div>
             <input type="submit" onClick={this.handleRead} value="Add to Read"/>
           </div>
         )
       })
       return (
-      <div>
+      <div className="current-container">
         <h3>Current Book</h3>
         {currentBook}
         <CurrentBookMessages clubId={this.props.clubId} current={this.props.Current[0]}/>

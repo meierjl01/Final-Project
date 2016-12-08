@@ -27,6 +27,7 @@ export default React.createClass({
     let pic;
     let bio;
     let addPic;
+    // console.log(this.state);
 
     if(this.state.user.pic) {
       pic = this.state.user.pic;
@@ -62,6 +63,7 @@ export default React.createClass({
         {bio}
         <div>User Messages for Club</div>
         <div>User Messages for Books</div>
+        <div>Library instead?</div>
       </div>
     )
   },

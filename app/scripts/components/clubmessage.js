@@ -2,6 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import store from '../store';
 import { Link } from 'react-router';
+import moment from 'moment';
 
 export default React.createClass({
   getInitialState() {
@@ -20,19 +21,23 @@ export default React.createClass({
     if(this.state.editing === false && this.state.owned === false) {
       return (
         <li>
-          On {new Date(this.props.message.created).toString()}
-          <Link to={`/user/${this.props.message.ownerId}`}>{this.props.message.email}</Link>
-          said: "{this.props.message.message}"
+          <div>On {moment(this.props.message.created).format('LLLL')},</div>
+          <div><Link to={`/user/${this.props.message.ownerId}`}>{this.props.message.email}</Link>
+          said:</div>
+          <div>"{this.props.message.message}"</div>
         </li>
       );
     } else if (this.state.editing === false && this.state.owned === true) {
       return (
       <li>
-        On {new Date(this.props.message.created).toString()}
-        <Link to={`/user/${this.props.message.ownerId}`}>{this.props.message.email}</Link>
-        said: "{this.props.message.message}"
-        <input onClick={this.handleEdit} type="button" value="Edit"/>
-        <input onClick={this.handleDelete} type="button" value="Delete"/>
+        <div>On {moment(this.props.message.created).format('LLLL')},</div>
+        <div><Link to={`/user/${this.props.message.ownerId}`}>{this.props.message.email} </Link> 
+        said: </div>
+        <div>"{this.props.message.message}"</div>
+        <div>
+          <input onClick={this.handleEdit} type="button" value="Edit"/>
+          <input onClick={this.handleDelete} type="button" value="Delete"/>
+        </div>
       </li>
     )
   } else if (this.state.editing === true) {

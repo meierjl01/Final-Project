@@ -1,5 +1,6 @@
 import React from 'react';
 import store from '../store';
+import moment from 'moment';
 
 export default React.createClass({
   getInitialState() {
@@ -18,7 +19,7 @@ export default React.createClass({
     if(this.state.editing === false && this.state.owned === false) {
       return (
         <li>
-          On {new Date(this.props.message.created).toString()}
+          On {moment(this.props.message.created).format('LLLL')}
           <Link to={`/user/${this.props.message.ownerId}`}>{this.props.message.email}</Link>
           said:"{this.props.message.message}"
         </li>
@@ -26,7 +27,7 @@ export default React.createClass({
     } else if (this.state.editing === false && this.state.owned === true) {
       return (
       <li>
-        On {new Date(this.props.message.created).toString()}
+        On {moment(this.props.message.created).format('LLLL')}
         <Link to={`/user/${this.props.message.ownerId}`}>{this.props.message.email}</Link> said:
         "{this.props.message.message}"
         <input onClick={this.handleEdit} type="button" value="Edit"/>

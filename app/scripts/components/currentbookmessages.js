@@ -15,7 +15,7 @@ export default React.createClass({
       )
     })
     return (
-      <div>
+      <div className="current-book-messages">
         Messages about this book:
         <ul>{currentmessages}</ul>
       </div>

@@ -6,11 +6,13 @@ export default React.createClass({
     // console.log(this.props);
     return (
         <li>
-          <span>{this.props.Future.title}</span>
-          <span>Rating: {this.props.Future.rating}</span>
+          <div>{this.props.Future.title}</div>
+          <div>By: {this.props.Future.author}</div>
           <img src={this.props.Future.image} />
-          <span>{this.props.Future.author}</span>
-          <input type="submit" onClick={this.handleCurrent} value="Add to Current"/>
+          <div>Rating: {this.props.Future.rating}</div>
+          <div className="add-current">
+            <input type="submit" onClick={this.handleCurrent} value="Add to Current"/>
+          </div>
         </li>
     )
   },

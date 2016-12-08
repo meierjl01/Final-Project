@@ -1,0 +1,14 @@
+.future-container {
+  text-align: center;
+  border: 1px $color-primary solid;
+  width: 45%;
+  padding: 4em;
+  margin: 2em auto;
+  margin-top: 0;
+  line-height: 1.7em;
+
+  .add-current {
+    margin: 1em 0 2em 0;;
+
+  }
+}
