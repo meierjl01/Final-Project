@@ -14,6 +14,7 @@ import FutureBooks from './components/futurebooks';
 import PastBooks from './components/pastbooks';
 import ClubMessages from './components/clubmessages';
 import UserProfile from './components/userprofile';
+import ImageUpload from './components/imageupload';
 
 //onChange takes prevState, nextState, replace, callback
 
@@ -30,6 +31,7 @@ const router = (
       <Route path="/clubs" component={Clubs} />
       <Route path="/clubs/new" component={NewClub} />
       <Route path="/user/:id" component={UserProfile} />
+      <Route path="/user/images/:id" component={ImageUpload} />
       <Route path="/clubs/:name" component={ClubHome}>
         <Route path="/clubs/:name/messages" component={ClubMessages} />
         <Route path="/clubs/:name/currentbook" component={CurrentBook} />

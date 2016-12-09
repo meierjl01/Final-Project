@@ -4,6 +4,7 @@ import $ from 'jquery';
 import { browserHistory } from 'react-router';
 
 export default Backbone.Model.extend({
+    urlRoot: 'https://api.backendless.com/v1/data/users',
     initialize() {
         if (window.localStorage.getItem('user-token')) {
             this.set({
@@ -74,7 +75,7 @@ export default Backbone.Model.extend({
             }
         });
     },
-    addPhoto(fileUrl) {
-      this.save({pic: fileUrl}, {type: 'PUT'});
+    addPhoto(fileURL) {
+      this.save({pic: fileURL}, {type: 'PUT'});
     }
 });
