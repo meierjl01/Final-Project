@@ -1,11 +1,15 @@
 import React from 'react';
 import store from '../store';
 import { browserHistory } from 'react-router';
+import User from '../models/user';
+import UserClubMessages from './userclubmessages';
+import UserBookMessages from './userbookmessages';
 
 export default React.createClass({
   getInitialState() {
     return {
       user: {},
+      messages: [],
       owned: false,
       editing: false,
     };
@@ -16,22 +20,30 @@ export default React.createClass({
     }
   },
   componentDidMount() {
-    //fetch messages -- club and book
-    store.user.on('update change', this.updateState);
+    var model = store.users.get(this.props.params.id)
+    if(!model) {
+      model = new User({objectId: this.props.params.id});
+      store.users.add(model)
+    }
+    model.fetch();
+    model.on('update change', this.updateState);
+
+    store.clubs.messages.fetch({data: {where: `ownerId='${this.props.params.id}'`}});
     store.clubs.on('update change', this.updateState);
   },
   componentWillUnmount() {
-    store.clubs.off('update chagne', this.updateState);
-    store.user.off('update change', this.updateState);
+    store.users.off('update change', this.updateState);
+    store.clubs.off('update change', this.updateState);
   },
   render() {
+    console.log(this.state);
+
     let pic;
     let info;
     let addPic;
-    console.log(store.user);
 
-    if(this.store.user.pic) {
-      pic = this.store.user.pic;
+    if(this.state.user.pic) {
+      pic = this.state.user.pic
     } else {
       pic = '../../assets/images/nopic.png'
     }
@@ -43,9 +55,9 @@ export default React.createClass({
       if(this.state.user.bio) {
         info = (
           <span>
-            {this.store.user.bio}
-            {this.store.user.fave}
-            <input onClick={this.handleEditBio} type="submit" value="Edit Your Bio" />
+            {this.state.user.bio}
+            {this.state.user.fave}
+            <input onClick={this.handleEditBio} type="submit" value="Edit Your Profile" />
           </span>
         );
       } else {
@@ -60,19 +72,27 @@ export default React.createClass({
     }
     return (
       <div className="profile">
-        <span>{this.store.user.email}</span>
+        <span>{this.state.user.email}</span>
         <img src={pic} />
         {addPic}
         {info}
-        <div>User Messages for Club</div>
-        <div>User Messages for Books</div>
+        <div>User Messages for Club
+          <UserClubMessages id={this.props.params.id}/>
+        </div>
+        <div>User Messages for Books
+          <UserBookMessages id={this.props.params.id}/>
+        </div>
       </div>
     )
   },
   updateState() {
+    if(store.users.get(this.props.params.id) !== undefined) {
+      this.setState({
+        user: store.users.get(this.props.params.id).toJSON()
+      });
+    }
     this.setState({
-      user: store.user.toJSON(),
-      clubs: store.clubs.toJSON()
+      messages: store.clubs.toJSON()
     })
   },
   handleEditBio() {
@@ -82,7 +102,7 @@ export default React.createClass({
     e.preventDefault();
     let bio = this.refs.bio.value;
     let fave = this.refs.book.value;
-    store.user.save({bio, fave});
+    store.users.save({bio, fave});
     this.setState({editing: false});
   },
   handleAddPic() {
