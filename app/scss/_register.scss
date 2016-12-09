@@ -1,10 +1,14 @@
 .register-form {
     text-align: center;
     margin-top: 3em;
+    text-align: center;
+    border: 1px $color-primary solid;
+    width: 40%;
+    padding: 4em;
+    margin: 2em auto;
 
     input {
       margin: 1em;
-      border: 2px solid black;
-      background: white;
+      border: 1px solid $color-primary;
     }
   }

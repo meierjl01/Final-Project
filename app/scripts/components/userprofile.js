@@ -25,7 +25,7 @@ export default React.createClass({
   },
   render() {
     let pic;
-    let bio;
+    let info;
     let addPic;
     // console.log(this.state);
 
@@ -40,16 +40,17 @@ export default React.createClass({
         addPic = <input onClick={this.handleAddPic} type="submit" value="Add a Picture" />
       }
       if(this.state.user.bio) {
-        bio = (
+        info = (
           <span>
             {this.state.user.bio}
             <input onClick={this.handleEditBio} type="submit" value="Edit Your Bio" />
           </span>
         );
       } else {
-        bio = (
+        info = (
           <form onSubmit={this.handleAddBio}>
             <textarea ref="bio" placeholder="Write Your Bio" />
+            <textarea ref="book" placeholder="Your favorite book(s)" />
             <input type="submit" value="Save"/>
           </form>
         );
@@ -60,10 +61,9 @@ export default React.createClass({
         <span>{this.state.user.email}</span>
         <img src={pic} />
         {addPic}
-        {bio}
+        {info}
         <div>User Messages for Club</div>
         <div>User Messages for Books</div>
-        <div>Library instead?</div>
       </div>
     )
   },
@@ -74,12 +74,16 @@ export default React.createClass({
     })
   },
   handleEditBio() {
-
+    this.setState({editing: true})
   },
-  handleAddBio() {
-
+  handleAddBio(e) {
+    e.preventDefault();
+    let bio = this.refs.bio.value;
+    let fave = this.refs.book.value;
+    store.user.save({bio, fave});
+    this.setState({editing: false});
   },
   handleAddPic() {
-
+    browserHistory.push('user/images/'+this.props.params.id)
   },
 });

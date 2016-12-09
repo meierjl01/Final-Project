@@ -8,15 +8,16 @@
 }
 
     .logged-out {
+      float: right;
+      display: inline-block;
         a {
-            text-align: center;
-            border: 2px solid black;
-            padding: 1em;
-            margin: 0 auto 1em;
-            border-radius: 10%;
-            color: black;
-            display: block;
-            width: 9%;
+            // border: 2px solid $color-primary;
+            // padding: 1em;
+            // margin: 0 auto 1em;
+            // border-radius: 10%;
+            color: $color-primary;
+            display: inline-block;
+            // width: 9%;
         }
     }
 
@@ -25,19 +26,19 @@
         display: inline-block;
 
         a {
-            color: black;
+            color: $color-primary;
             font-size: 0.75em;
-            padding: 0.5em;
+            padding-left: 0.5em;
             margin: 0.5em;
             text-align: center;
         }
 
         .logout {
-            background: white;
+            background: $color-secondary;
+            color: $color-primary;
             font-size: 0.75em;
             border: none;
-            border-radius: 15%;
-            padding: 0.5em;
+            padding-left: 0.5em;
             margin: 0.5em;
             text-align: center;
         }

@@ -65,6 +65,7 @@
     "jquery": "^3.1.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
+    "react-dropzone": "^3.7.3",
     "react-router": "^3.0.0",
     "x2js": "git+https://github.com/abdmob/x2js.git"
   }

@@ -74,4 +74,7 @@ export default Backbone.Model.extend({
             }
         });
     },
+    addPhoto(fileUrl) {
+      this.save({pic: fileUrl}, {type: 'PUT'});
+    }
 });
