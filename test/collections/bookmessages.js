@@ -5,17 +5,17 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import Users from '../../app/scripts/collections/users';
+import BookMessages from '../../app/scripts/collections/bookmessages';
 
-describe('users collection', () => {
-    let users;
+describe('bookmessages collection', () => {
+    let bookmessages;
 
     beforeEach(() => {
-        users = new Users();
+        bookmessages = new BookMessages();
     });
 
     it('should create a Backbone Collection', () => {
-        expect(users).to.be.an.instanceof(Backbone.Collection);
+        expect(bookmessages).to.be.an.instanceof(Backbone.Collection);
     });
 
     });

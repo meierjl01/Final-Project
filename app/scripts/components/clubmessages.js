@@ -19,7 +19,7 @@ export default React.createClass({
       <div className="club-messages-container">
         Messages:
         <ul>{clubsmessages}</ul>
-        <NewClubMessage clubId={this.props.clubId}/>
+        <NewClubMessage name={this.props.clubName} clubId={this.props.clubId}/>
       </div>
     )
   }

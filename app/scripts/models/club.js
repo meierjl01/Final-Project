@@ -16,7 +16,8 @@ export default Backbone.Model.extend({
     addMessageToBook({
         message,
         email,
-        bookId
+        bookId,
+        book
     }) {
         // console.log(this.get('bookmessages'));
         let bookmessages;
@@ -24,13 +25,15 @@ export default Backbone.Model.extend({
             bookmessages = this.get('bookmessages').concat([{
                 message,
                 email,
+                book,
                 ___class: 'BookMessages'
             }])
         } else {
             bookmessages = [{
                 ___class: 'BookMessages',
                 message,
-                email
+                email,
+                book
             }]
         }
         $.ajax({
@@ -49,7 +52,8 @@ export default Backbone.Model.extend({
 
     addMessageToClub({
         message,
-        email
+        email,
+        club
     }) {
         // console.log(this);
         this.save({
@@ -57,6 +61,7 @@ export default Backbone.Model.extend({
                 ___class: 'messages',
                 message,
                 email,
+                club
             }])
         });
     },

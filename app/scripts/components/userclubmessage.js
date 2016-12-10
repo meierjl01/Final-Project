@@ -8,6 +8,7 @@ export default React.createClass({
         On {moment(this.props.message.created).format('LLLL')},
         {this.props.message.email} said:
         "{this.props.message.message}"
+        in the {this.props.message.club} chat.
       </li>
     )
   }

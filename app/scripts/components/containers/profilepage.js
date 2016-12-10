@@ -34,7 +34,6 @@ export default React.createClass({
     store.bookMessages.off('update change', this.updateState);
   },
   render() {
-    // console.log(this.state.messages);
     return (
         <div className="profile">
             <UserProfile id={this.props.params.id} user={this.state.user}/>

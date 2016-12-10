@@ -3,6 +3,7 @@ import store from '../store';
 
 export default React.createClass({
   render() {
+    // console.log(this.props.name);
     if(this.props === undefined) {
       return (
         <div />
@@ -20,7 +21,8 @@ export default React.createClass({
     e.preventDefault();
     let message = this.refs.note.value;
     let email = window.localStorage.getItem('email');
+    let club = this.props.name;
     this.refs.note.value = "";
-    store.clubs.get(this.props.clubId).addMessageToClub({message, email});
+    store.clubs.get(this.props.clubId).addMessageToClub({message, email, club});
   }
 });

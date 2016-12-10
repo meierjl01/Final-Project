@@ -1,6 +1,7 @@
 import React from 'react';
 import store from '../store';
 import moment from 'moment';
+import { Link } from 'react-router';
 
 export default React.createClass({
   getInitialState() {
