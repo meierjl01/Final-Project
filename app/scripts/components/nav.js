@@ -25,7 +25,7 @@ export default React.createClass({
       nav = (
         <nav className="logged-in">
           <Link to = "/clubs"><i className="fa fa-home" aria-hidden="true"></i>   Home</Link>
-          <Link to = {`/user/${window.localStorage.getItem('ownerId')}`}>My Profile</Link>
+          <Link to = {`/user/${window.localStorage.getItem('ownerId')}`}><i className="fa fa-user-circle" aria-hidden="true"></i> My Profile</Link>
           <Link to = "/clubs/new"><i className="fa fa-book" aria-hidden="true"></i> Create A Club</Link>
           <input type = "submit" className="logout" onClick={this.handleLogout} value="Log Out"/>
         </nav>

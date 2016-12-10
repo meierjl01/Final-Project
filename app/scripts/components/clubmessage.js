@@ -34,7 +34,7 @@ export default React.createClass({
         <div><Link to={`/user/${this.props.message.ownerId}`}>{this.props.message.email} </Link>
         said: </div>
         <div>"{this.props.message.message}"</div>
-        <div>
+        <div className="edit-delete-buttons">
           <input onClick={this.handleEdit} type="button" value="Edit"/>
           <input onClick={this.handleDelete} type="button" value="Delete"/>
         </div>

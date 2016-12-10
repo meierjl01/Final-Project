@@ -15,7 +15,7 @@ export default React.createClass({
       })
     }
     return (
-      <ul>
+      <ul className="club-messages">
         Club Messages:
         {userclubmessages}
       </ul>

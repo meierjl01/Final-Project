@@ -1,5 +1,5 @@
 import React from 'react';
-import PastBooksList from './pastbookslist';
+import PastBooksList from '../pastbookslist';
 
 export default React.createClass({
   render() {

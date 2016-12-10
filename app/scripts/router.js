@@ -5,16 +5,16 @@ import { Route, Router, browserHistory } from 'react-router';
 import store from './store';
 import App from './components/containers/app';
 import Clubs from './components/clubs';
-import NewClub from './components/newclub';
+import NewClub from './components/containers/newclub';
 import Login from './components/login';
 import Register from './components/register';
 import ClubHome from './components/containers/clubhome';
-import CurrentBook from './components/currentbook';
-import FutureBooks from './components/futurebooks';
-import PastBooks from './components/pastbooks';
+import CurrentBook from './components/containers/currentbook';
+import FutureBooks from './components/containers/futurebooks';
+import PastBooks from './components/containers/pastbooks';
 import ClubMessages from './components/clubmessages';
 import ProfilePage from './components/containers/profilepage';
-import ImageUpload from './components/imageupload';
+import ImageUpload from './components/containers/imageupload';
 
 //onChange takes prevState, nextState, replace, callback
 

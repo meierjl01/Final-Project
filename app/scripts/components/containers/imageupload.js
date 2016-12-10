@@ -1,8 +1,8 @@
 import React from 'react';
 import Dropzone from 'react-dropzone';
 import $ from 'jquery';
-import config from '../config';
-import store from '../store';
+import config from '../../config';
+import store from '../../store';
 import { browserHistory } from 'react-router';
 
 export default React.createClass({

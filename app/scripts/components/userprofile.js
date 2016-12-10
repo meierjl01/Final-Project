@@ -44,14 +44,15 @@ export default React.createClass({
         <form onSubmit={this.handleAddBio}>
           <textarea ref="bio" placeholder="Write Your Bio" />
           <textarea ref="book" placeholder="Your favorite book(s)" />
-          <input type="submit" value="Save"/>
+          <div>
+            <input type="submit" value="Save"/>
+          </div>
         </form>
       );
     }
   }
   return (
     <div>
-      <span>{this.props.user.email}</span>
       <img src={pic} />
       {addPic}
       {info}

@@ -1,9 +1,28 @@
 .past-container {
-  text-align: center;
-  border: 1px $color-primary solid;
-  width: 45%;
-  padding: 4em;
-  margin: 2em auto;
-  margin-top: 0;
-  line-height: 1.7em;
+    text-align: left;
+    border: 1px $color-primary solid;
+    width: 45%;
+    padding: 4em;
+    margin: 0 auto 2em;
+    line-height: 1.7em;
+
+    h3 {
+        text-align: center;
+    }
+
+    .book-info {
+        display: inline-block;
+        text-align: left;
+        position: absolute;
+    }
+
+    .book-pic {
+        display: inline-block;
+        position: relative;
+    }
+
+    .book-messages {
+        margin-top: 2em;
+        margin-bottom: 4em;
+    }
 }

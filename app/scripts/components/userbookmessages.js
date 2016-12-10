@@ -15,7 +15,7 @@ export default React.createClass({
       })
     }
     return (
-      <ul>
+      <ul className="book-messages">
         Book Messages:
         {userbookmessages}
       </ul>

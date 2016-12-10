@@ -1,7 +1,7 @@
 import React from 'react';
-import CurrentBookMessages from './currentbookmessages';
-import NewCurrentBookMessage from './newcurrentbookmessage';
-import store from '../store';
+import CurrentBookMessages from '../currentbookmessages';
+import NewCurrentBookMessage from '../newcurrentbookmessage';
+import store from '../../store';
 
 export default React.createClass({
   render() {

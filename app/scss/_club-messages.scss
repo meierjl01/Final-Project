@@ -1,7 +1,19 @@
 .club-messages-container {
-  text-align: center;
+  text-align: left;
   border: 1px $color-primary solid;
   width: 40%;
   padding: 4em;
   margin: 2em auto;
+
+  h3 {
+    text-align: center;
+  }
+
+  .edit-delete-buttons {
+
+  }
+
+  .publish-button {
+
+  }
 }

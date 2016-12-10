@@ -31,8 +31,10 @@ export default React.createClass({
         On {moment(this.props.message.created).format('LLLL')}
         <Link to={`/user/${this.props.message.ownerId}`}>{this.props.message.email}</Link> said:
         "{this.props.message.message}"
-        <input onClick={this.handleEdit} type="button" value="Edit"/>
-        <input onClick={this.handleDelete} type="button" value="Delete"/>
+        <div className="edit-delete-buttons">
+          <input onClick={this.handleEdit} type="button" value="Edit"/>
+          <input onClick={this.handleDelete} type="button" value="Delete"/>
+        </div>
       </li>
     )
   } else if (this.state.editing === true) {

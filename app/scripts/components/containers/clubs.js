@@ -1,6 +1,6 @@
 import React from 'react';
-import store from '../store';
-import ClubItem from './clubitem';
+import store from '../../store';
+import ClubItem from '../clubitem';
 import { Link } from 'react-router';
 
 export default React.createClass({

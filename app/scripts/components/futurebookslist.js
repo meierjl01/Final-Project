@@ -6,10 +6,12 @@ export default React.createClass({
     // console.log(this.props);
     return (
         <li>
+        <img className="book-pic" src={this.props.Future.image} />
+        <span className="book-info">
           <div>{this.props.Future.title}</div>
           <div>By: {this.props.Future.author}</div>
-          <img src={this.props.Future.image} />
           <div>Rating: {this.props.Future.rating}</div>
+        </span>
           <div className="add-current">
             <input type="submit" onClick={this.handleCurrent} value="Add to Current"/>
           </div>

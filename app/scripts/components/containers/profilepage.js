@@ -35,10 +35,15 @@ export default React.createClass({
   },
   render() {
     return (
+      <div>
+      <div className="heading">
+        <h2>{this.state.user.email}</h2>
+      </div>
         <div className="profile">
             <UserProfile id={this.props.params.id} user={this.state.user}/>
             <UserClubMessages messages={this.state.messages} id={this.props.params.id}/>
             <UserBookMessages id={this.props.params.id} bookMessages={this.state.bookMessages}/>
+        </div>
         </div>
     )
   },

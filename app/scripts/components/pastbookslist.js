@@ -6,10 +6,12 @@ export default React.createClass({
     // console.log(this.props.Past);
     return (
       <li>
-        <span>{this.props.Past.title}</span>
-        <span>Rating: {this.props.Past.rating}</span>
-        <img src={this.props.Past.image} />
-        <span>{this.props.Past.author}</span>
+        <img className="book-pic" src={this.props.Past.image} />
+        <span className="book-info">
+          <div>{this.props.Past.title}</div>
+          <div>{this.props.Past.author}</div>
+          <div>Rating: {this.props.Past.rating}</div>
+        </span>
         <PastBookMessages Past={this.props.Past}/>
       </li>
     )

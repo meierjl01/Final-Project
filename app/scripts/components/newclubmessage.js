@@ -12,7 +12,9 @@ export default React.createClass({
     return(
       <form onSubmit={this.handleMessage}>
         <textarea placeholder="Join the conversation!" ref="note" />
-        <input className="publish-club-message" type="submit" value="Publish" />
+        <div>
+          <input className="publish" type="submit" value="Publish" />
+        </div>
       </form>
     )
   }
