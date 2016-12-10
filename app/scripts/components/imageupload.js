@@ -13,11 +13,11 @@ export default React.createClass({
     }
   },
   componentDidMount() {
-    store.user.fetch({url: 'https://api.backendless.com/v1/data/users/'+this.props.params.id});
-    store.user.on('update change', this.updateState);
+    store.users.fetch({url: 'https://api.backendless.com/v1/data/users/'+this.props.params.id});
+    store.users.on('update change', this.updateState);
   },
   componentWillUnmount() {
-    store.user.off('update change', this.updateState);
+    store.users.off('update change', this.updateState);
   },
   render() {
     return (
