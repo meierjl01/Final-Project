@@ -4,10 +4,10 @@ import { Route, Router, browserHistory } from 'react-router';
 
 import store from './store';
 import App from './components/containers/app';
-import Clubs from './components/clubs';
+import Clubs from './components/containers/clubs';
 import NewClub from './components/containers/newclub';
-import Login from './components/login';
-import Register from './components/register';
+import Login from './components/containers/login';
+import Register from './components/containers/register';
 import ClubHome from './components/containers/clubhome';
 import CurrentBook from './components/containers/currentbook';
 import FutureBooks from './components/containers/futurebooks';

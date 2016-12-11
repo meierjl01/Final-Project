@@ -1,0 +1,21 @@
+.add-image-container {
+  text-align: center;
+  border: 1px $color-primary solid;
+  width: 40%;
+  padding: 4em;
+  margin: 2em auto;
+
+  input {
+    margin: .5em;
+  }
+
+  .dropzone {
+    text-align: center;
+  }
+
+  img {
+      max-width: 50%;
+      height: 10em;
+      width: 9.5em;
+  }
+}

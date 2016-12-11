@@ -14,12 +14,9 @@ export default React.createClass({
     }
   },
   render() {
-    // console.log(this.props.user);
   let pic;
   let info;
   let addPic;
-
-  //if it's undefined, div
 
   if(this.props.user.pic) {
     pic = this.props.user.pic
@@ -29,7 +26,11 @@ export default React.createClass({
 
   if(this.state.owned === true && this.state.editing === false) {
     if(!this.props.user.pic) {
-      addPic = <input onClick={this.handleAddPic} type="submit" value="Add a Picture" />
+      addPic = (
+        <div className="add-pic">
+          <input onClick={this.handleAddPic} type="submit" value="Add a Picture" />
+        </div>
+     )
     }
     if(this.props.user.bio) {
       info = (

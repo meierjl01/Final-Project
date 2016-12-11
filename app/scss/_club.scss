@@ -13,12 +13,23 @@
         border: 1px $color-primary solid;
         width: 60%;
         margin: 2em auto;
-        // margin-bottom: 0;
         padding: .25em;
 
         a {
             padding: 0 0.25em;
             margin-top: 0.25em;
+        }
+
+        a:nth-child(-n+3) {
+          border-right: 1px $color-primary solid;
+        }
+
+        a:hover {
+          background: $color-tertiary;
+        }
+
+        a:active{
+          background: $color-tertiary;
         }
     }
 

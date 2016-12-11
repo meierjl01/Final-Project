@@ -11,10 +11,16 @@
     text-align: center;
   }
 
+  // li {
+  //   max-width: 45%;
+  //   overflow: auto;
+  // }
+
   .book-info {
     display: inline-block;
     text-align: left;
     position: absolute;
+    // max-width: 100%;
   }
 
   .book-pic {
@@ -25,6 +31,7 @@
   .book-messages {
     margin-top: 2em;
     margin-bottom: 4em;
+    // max-width: 100%
   }
 
   .add-current {

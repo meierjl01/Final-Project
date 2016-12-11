@@ -22,12 +22,17 @@ export default React.createClass({
   render() {
     return (
       <div>
-        <Dropzone ref={(node) => { this.dropzone = node; }} onDrop={this.onDrop}>
-        <div>Drop an image file here or click to select files to upload.</div>
-        </Dropzone>
+      <div className="heading">Add a Profile Image</div>
+      <div className="add-image-container">
+        <div className="dropzone">
+          <Dropzone ref={(node) => { this.dropzone = node; }} onDrop={this.onDrop}>
+          <div>Drop an image file here or click to select files to upload.</div>
+          </Dropzone>
+        </div>
         <input type="button" onClick={this.onOpenClick} value="Open Dropzone" />
         <div key={this.state.file}>{this.state.files.map((file, i) => <img src={file.preview} key={i}/> )}</div>
-        <input type="button" onClick={this.upload} value="Upload Image"/>
+        <input type="button" onClick={this.upload} value="Save Image"/>
+      </div>
       </div>
     )
   },
