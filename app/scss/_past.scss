@@ -5,6 +5,7 @@
     padding: 4em;
     margin: 0 auto 2em;
     line-height: 1.7em;
+    background: $color-tertiary;
 
     h3 {
         text-align: center;
@@ -22,7 +23,7 @@
         display: inline-block;
         position: relative;
         vertical-align: top;
-        
+
     }
 
     .book-messages {

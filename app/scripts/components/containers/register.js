@@ -8,7 +8,9 @@ export default React.createClass({
         <input ref="email" type="email" placeholder="Email Address" />
         <input ref="password" type="password" placeholder="Password" />
         <input ref="confirmpw" type="password" placeholder="Confirm Password" />
-        <input ref="register" type="submit" value="Register Now" />
+        <div>
+          <input ref="register" type="submit" value="Register Now" />
+        </div>
       </form>
     )
   },

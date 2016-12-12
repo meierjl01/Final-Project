@@ -1,9 +1,19 @@
 .app-name {
   display: inline-block;
+  vertical-align: center;
+}
+
+.welcome {
+  text-align: center;
+  margin-top: 2em;
 }
 
 .nav {
     padding: 2em;
+    float: right;
+    display: inline-block;
+    vertical-align: center;
+    position: relative;
 
 .nav::after {
     clear: both;
@@ -12,22 +22,17 @@
 }
 
     .logged-out {
-      float: right;
-      display: inline-block;
+
         a {
-            // border: 2px solid $color-primary;
-            // padding: 1em;
-            // margin: 0 auto 1em;
-            // border-radius: 10%;
-            color: $color-primary;
-            display: inline-block;
-            // width: 9%;
+          color: $color-primary;
+          font-size: 1em;
+          padding-left: 0.5em;
+          margin: 0.5em;
+          text-align: center;
         }
     }
 
     .logged-in {
-        float: right;
-        display: inline-block;
 
         a {
             color: $color-primary;

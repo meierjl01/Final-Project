@@ -35,8 +35,8 @@ export default React.createClass({
     if(this.props.user.bio) {
       info = (
         <span>
-          {this.props.user.bio}
-          {this.props.user.fave}
+          <div>Bio: {this.props.user.bio}</div>
+          <div>Favorite Books: {this.props.user.fave}</div>
           <input onClick={this.handleEditBio} type="submit" value="Edit Your Profile" />
         </span>
       );
@@ -54,9 +54,15 @@ export default React.createClass({
   }
   return (
     <div>
-      <img src={pic} />
-      {addPic}
-      {info}
+      <div>
+        <img src={pic} />
+      </div>
+      <div>
+        {addPic}
+      </div>
+      <div>
+        {info}
+      </div>
     </div>
   )
   },

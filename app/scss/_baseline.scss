@@ -3,10 +3,36 @@ body {
     color: $color-primary;
     background-color: $color-secondary;
 
+    .heading {
+        color: white;
+        padding: 2em;
+        background: url("../../assets/images/beach.jpeg") no-repeat center center;
+        background-size: cover;
+        height: 14em;
+        text-align: center;
+    }
+
+    img {
+      border: 1px $color-primary solid;
+    }
+
     input {
         outline: none;
         font-family: 'Quicksand', sans-serif;
         color: $color-primary;
+        border: 1px $color-primary solid;
+        margin: .5em;
+        background: $color-tertiary;
+    }
+
+    textarea {
+      border: 1px $color-primary solid;
+      margin: 1em;
+      height: 4em;
+      text-align: center;
+      padding: 1em;
+      background: $color-tertiary;
+
     }
 
     li {

@@ -20,7 +20,7 @@ export default React.createClass({
       store.users.add(model)
     }
     model.fetch();
-    model.on('update change', this.updateState);
+    model.on('change', this.updateState);
 
     store.messages.fetch({data: {where: `ownerId='${this.props.params.id}'`}});
     store.messages.on('update change', this.updateState);
@@ -29,21 +29,17 @@ export default React.createClass({
     store.bookMessages.on('update change', this.updateState);
   },
   componentWillUnmount() {
-    store.users.off('update change', this.updateState);
+    store.users.get(this.props.params.id).off('change', this.updateState);
     store.messages.off('update change', this.updateState);
     store.bookMessages.off('update change', this.updateState);
   },
   render() {
     return (
-      <div>
-      <div className="heading">
-        <h2>{this.state.user.email}</h2>
-      </div>
         <div className="profile">
+            <h2>{this.state.user.email}</h2>
             <UserProfile id={this.props.params.id} user={this.state.user}/>
             <UserClubMessages messages={this.state.messages} id={this.props.params.id}/>
             <UserBookMessages id={this.props.params.id} bookMessages={this.state.bookMessages}/>
-        </div>
         </div>
     )
   },

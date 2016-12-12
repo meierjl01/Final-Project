@@ -37,7 +37,7 @@ export default React.createClass({
     })
     return(
       <div className="club-home">
-        <div className="heading">
+        <div>
           <h2>{this.props.params.name}</h2>
           <span>{this.state.club.description}</span>
         </div>
