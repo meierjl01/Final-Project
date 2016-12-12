@@ -11,27 +11,23 @@
     text-align: center;
   }
 
-  // li {
-  //   max-width: 45%;
-  //   overflow: auto;
-  // }
-
   .book-info {
     display: inline-block;
     text-align: left;
-    position: absolute;
-    // max-width: 100%;
+    max-width: calc(100% - 98px);
+    padding: 0 0 0 10px;
+    box-sizing: border-box;
   }
 
   .book-pic {
     display: inline-block;
     position: relative;
+    vertical-align: top;
   }
 
   .book-messages {
     margin-top: 2em;
     margin-bottom: 4em;
-    // max-width: 100%
   }
 
   .add-current {

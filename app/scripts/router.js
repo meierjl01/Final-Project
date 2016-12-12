@@ -15,6 +15,7 @@ import PastBooks from './components/containers/pastbooks';
 import ClubMessages from './components/clubmessages';
 import ProfilePage from './components/containers/profilepage';
 import ImageUpload from './components/containers/imageupload';
+import NotFound from './components/containers/notfound';
 
 //onChange takes prevState, nextState, replace, callback
 
@@ -39,6 +40,7 @@ const router = (
         <Route path="/clubs/:name/pastbooks" component={PastBooks} />
       </Route>
     </Route>
+    <Route path="*" component={NotFound} />
   </Router>
 );
 

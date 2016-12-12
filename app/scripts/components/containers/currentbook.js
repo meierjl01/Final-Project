@@ -11,7 +11,7 @@ export default React.createClass({
           <div key={i}>
             <div>{Current.title}</div>
             <div>By: {Current.author}</div>
-            <img src={Current.image} />
+            <img alt="book's cover image" src={Current.image} />
             <div>Rating: {Current.rating}</div>
             <input type="submit" onClick={this.handleRead} value="Add to Read"/>
           </div>

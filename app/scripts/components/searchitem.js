@@ -16,7 +16,7 @@ export default React.createClass({
       <li>
         <span>{this.props.book.best_book.title}</span>
         <span>Rating: {this.props.book.average_rating}</span>
-        <img src={this.props.book.best_book.image_url} />
+        <img alt="book's cover image" src={this.props.book.best_book.image_url} />
         <span>{this.props.book.best_book.author.name}</span>
         {button}
       </li>

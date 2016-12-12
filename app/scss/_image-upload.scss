@@ -9,13 +9,17 @@
     margin: .5em;
   }
 
-  .dropzone {
-    text-align: center;
-  }
 
   img {
       max-width: 50%;
       height: 10em;
       width: 9.5em;
   }
+}
+
+.dropzone > div {
+  margin: 0 auto;
+  background: $color-tertiary;
+  padding: 1em;
+  padding-top: 4em;
 }

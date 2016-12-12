@@ -6,7 +6,7 @@ export default React.createClass({
     // console.log(this.props.Past);
     return (
       <li>
-        <img className="book-pic" src={this.props.Past.image} />
+        <img className="book-pic" alt="book's cover image" src={this.props.Past.image} />
         <span className="book-info">
           <div>{this.props.Past.title}</div>
           <div>{this.props.Past.author}</div>

@@ -29,7 +29,6 @@ export default React.createClass({
           <div>Drop an image file here or click to select files to upload.</div>
           </Dropzone>
         </div>
-        <input type="button" onClick={this.onOpenClick} value="Open Dropzone" />
         <div key={this.state.file}>{this.state.files.map((file, i) => <img src={file.preview} key={i}/> )}</div>
         <input type="button" onClick={this.upload} value="Save Image"/>
       </div>

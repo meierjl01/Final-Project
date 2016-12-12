@@ -11,14 +11,18 @@
     }
 
     .book-info {
-        display: inline-block;
-        text-align: left;
-        position: absolute;
+      display: inline-block;
+      text-align: left;
+      max-width: calc(100% - 98px);
+      padding: 0 0 0 10px;
+      box-sizing: border-box;
     }
 
     .book-pic {
         display: inline-block;
         position: relative;
+        vertical-align: top;
+        
     }
 
     .book-messages {
