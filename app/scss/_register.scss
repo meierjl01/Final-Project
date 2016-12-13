@@ -7,7 +7,10 @@
     padding: 4em;
     margin: 2em auto;
     background: $color-tertiary;
-    
+
+    .register {
+      background: $color-secondary;
+    }
 
     input {
       margin: 1em;

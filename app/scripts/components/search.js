@@ -30,6 +30,7 @@ export default React.createClass ({
     e.preventDefault();
     let title = this.refs.title.value;
     store.books.getBooks(title);
+    this.refs.title.value = "";
   },
   updateState() {
     this.setState({books: store.books.toJSON()})

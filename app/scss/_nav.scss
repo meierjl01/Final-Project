@@ -51,14 +51,14 @@
         }
     }
 }
-@media (min-width: 480px) {
+@media (max-width: 480px) {
     .app-name {
         font-size: 1.5em;
         vertical-align: center;
     }
 
     .nav {
-        padding: .5em;
+        padding: .34em;
         margin-top: .5em;
         float: right;
         display: inline-block;

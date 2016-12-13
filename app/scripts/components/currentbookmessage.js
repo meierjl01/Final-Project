@@ -20,16 +20,16 @@ export default React.createClass({
     if(this.state.editing === false && this.state.owned === false) {
       return (
         <li>
-          On {moment(this.props.message.created).format('LLLL')}
-          <Link to={`/user/${this.props.message.ownerId}`}>{this.props.message.email}</Link>
-          said:"{this.props.message.message}"
+          On {moment(this.props.message.created).format('LLLL')},
+          <div> <Link className="link" to={`/user/${this.props.message.ownerId}`}>{this.props.message.email}</Link>
+          said: </div>"{this.props.message.message}"
         </li>
       );
     } else if (this.state.editing === false && this.state.owned === true) {
       return (
       <li>
-        On {moment(this.props.message.created).format('LLLL')}
-        <Link to={`/user/${this.props.message.ownerId}`}>{this.props.message.email}</Link> said:
+        On {moment(this.props.message.created).format('LLLL')},
+        <div><Link className="link" to={`/user/${this.props.message.ownerId}`}>{this.props.message.email}</Link> said: </div>
         "{this.props.message.message}"
         <div className="edit-delete-buttons">
           <input onClick={this.handleEdit} type="button" value="Edit"/>
@@ -40,9 +40,11 @@ export default React.createClass({
   } else if (this.state.editing === true) {
       return (
       <form onSubmit={this.handleSave}>
-        <span>Edit your message:</span>
+        <div>Edit your message:</div>
         <textarea defaultValue={this.props.message.message} ref="note" />
-        <input type="submit" value="Save" />
+        <div>
+          <input type="submit" value="Save" />
+        </div>
       </form>
     )
   }

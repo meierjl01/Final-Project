@@ -24,6 +24,8 @@
     .club-messages {
         margin: 2em 0;
         line-height: 1.5em;
+        height: 10em;
+        overflow: scroll;
 
         li {
             margin: 2em 0;
@@ -33,7 +35,7 @@
     .book-messages {
         margin: 2em 0;
         line-height: 1.5em;
-        height: 4em;
+        height: 10em;
         overflow: scroll;
 
         li {
@@ -43,11 +45,11 @@
 }
 
 
-//   @media (min-width: 480px) {
-//
-//     .profile {
-//       textarea {
-//         width: 8em;
-//       }
-//   }
-// }
+  @media (max-width: 480px) {
+
+    .profile {
+      textarea {
+        width: 8em;
+      }
+  }
+}

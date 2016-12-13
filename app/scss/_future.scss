@@ -10,19 +10,7 @@
     h3 {
         text-align: center;
     }
-    // .book-info {
-    //   display: inline-block;
-    //   text-align: left;
-    //   max-width: calc(100% - 98px);
-    //   padding: 0 0 0 10px;
-    //   box-sizing: border-box;
-    // }
-    //
-    // .book-pic {
-    //   display: inline-block;
-    //   position: relative;
-    //   vertical-align: top;
-    // }
+
     .book-messages {
         margin-top: 2em;
         margin-bottom: 4em;
@@ -36,16 +24,17 @@
         }
     }
 }
-
-@media (min-width: 480px) {
+@media (max-width: 480px) {
     .future-container {
-        text-align: center;
+        width: 100%;
+        padding: 0;
+        line-height: 1.5em;
+        box-sizing: border-box;
 
         .book-info {
-            text-align: center;
 
             div {
-                margin: 1em;
+                margin: .4em;
             }
         }
     }

@@ -7,8 +7,8 @@ export default React.createClass({
 
     return (
       <li>
-        On {moment(this.props.message.created).format('LLLL')},
-        {this.props.message.email} said:
+        <div>On {moment(this.props.message.created).format('LLLL')}, </div> 
+        <div>{this.props.message.email} said: </div>
         "{this.props.message.message}"
         in the {this.props.message.book} chat.
       </li>

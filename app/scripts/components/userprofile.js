@@ -1,5 +1,6 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
+import store from '../store';
 
 export default React.createClass({
   getInitialState() {
@@ -27,8 +28,8 @@ export default React.createClass({
   if(this.state.owned === true && this.state.editing === false) {
     if(!this.props.user.pic) {
       addPic = (
-        <div className="add-pic">
-          <input onClick={this.handleAddPic} type="submit" value="Add a Picture" />
+        <div>
+          <input className="add-pic" onClick={this.handleAddPic} type="submit" value="Add a Picture" />
         </div>
      )
     }
@@ -73,7 +74,7 @@ export default React.createClass({
     e.preventDefault();
     let bio = this.refs.bio.value;
     let fave = this.refs.book.value;
-    store.users.save({bio, fave});
+    store.user.save({bio, fave});
     this.setState({editing: false});
   },
   handleAddPic() {

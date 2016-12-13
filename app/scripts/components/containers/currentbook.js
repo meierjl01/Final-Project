@@ -5,14 +5,15 @@ import store from '../../store';
 
 export default React.createClass({
   render() {
-    // console.log(this.props.clubId);
       let currentBook = this.props.Current.map((Current, i, arr) => {
         return (
           <div key={i}>
-            <div>{Current.title}</div>
-            <div>By: {Current.author}</div>
-            <div>Rating: {Current.rating}</div>
-            <img alt="book's cover image" src={Current.image} />
+            <img className="book-pic" alt="book's cover image" src={Current.image} />
+            <span className="book-info">
+              <div>{Current.title}</div>
+              <div>By: {Current.author}</div>
+              <div>Rating: {Current.rating}</div>
+            </span>
             <input className="add-button" type="submit" onClick={this.handleRead} value="Add to Read"/>
           </div>
         )
