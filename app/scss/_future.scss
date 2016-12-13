@@ -1,39 +1,52 @@
 .future-container {
-  text-align: left;
-  border: 1px $color-primary solid;
-  width: 45%;
-  padding: 4em;
-  margin: 2em auto;
-  margin-top: 0;
-  line-height: 1.7em;
-  background: $color-tertiary;
-  
-
-  h3 {
-    text-align: center;
-  }
-
-  .book-info {
-    display: inline-block;
     text-align: left;
-    max-width: calc(100% - 98px);
-    padding: 0 0 0 10px;
-    box-sizing: border-box;
-  }
+    border: 1px $color-primary solid;
+    width: 45%;
+    padding: 4em;
+    margin: 0 auto 2em;
+    line-height: 1.7em;
+    background: $color-tertiary;
 
-  .book-pic {
-    display: inline-block;
-    position: relative;
-    vertical-align: top;
-  }
+    h3 {
+        text-align: center;
+    }
+    // .book-info {
+    //   display: inline-block;
+    //   text-align: left;
+    //   max-width: calc(100% - 98px);
+    //   padding: 0 0 0 10px;
+    //   box-sizing: border-box;
+    // }
+    //
+    // .book-pic {
+    //   display: inline-block;
+    //   position: relative;
+    //   vertical-align: top;
+    // }
+    .book-messages {
+        margin-top: 2em;
+        margin-bottom: 4em;
+    }
 
-  .book-messages {
-    margin-top: 2em;
-    margin-bottom: 4em;
-  }
+    .add-current {
+        margin: 1em 0 2em;
 
-  .add-current {
-    margin: 1em 0 2em 0;;
+        input {
+            background: $color-secondary;
+        }
+    }
+}
 
-  }
+@media (min-width: 480px) {
+    .future-container {
+        text-align: center;
+
+        .book-info {
+            text-align: center;
+
+            div {
+                margin: 1em;
+            }
+        }
+    }
 }

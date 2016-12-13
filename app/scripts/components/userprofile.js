@@ -46,7 +46,7 @@ export default React.createClass({
           <textarea ref="bio" placeholder="Write Your Bio" />
           <textarea ref="book" placeholder="Your favorite book(s)" />
           <div>
-            <input type="submit" value="Save"/>
+            <input className="profile-save" type="submit" value="Save"/>
           </div>
         </form>
       );

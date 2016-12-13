@@ -1,6 +1,5 @@
 .club-home {
     text-align: center;
-
     // .heading {
     //     color: white;
     //     padding: 2em;
@@ -8,12 +7,11 @@
     //     background-size: cover;
     //     height: 7em;
     // }
-
     .home-nav {
         border: 1px $color-primary solid;
         width: 40%;
         margin: 2em auto;
-        padding: .25em;
+        padding: 0.25em;
 
         a {
             padding: 0 0.25em;
@@ -21,24 +19,31 @@
         }
 
         a:nth-child(-n+3) {
-          border-right: 1px $color-primary solid;
+            border-right: 1px $color-primary solid;
         }
 
         a:hover {
-          background: $color-tertiary;
+            background: $color-tertiary;
         }
 
-        a:active{
-          background: $color-tertiary;
+        a:active {
+            background: $color-tertiary;
         }
     }
 
     .search-div {
-      margin-top: 2em;
+        margin-top: 2em;
     }
 
     .club-message {
-      line-height: 1.5em;
-      margin: 1.5em 0 1.5em 0;
+        line-height: 1.5em;
+        margin: 1.5em 0;
+    }
+}
+@media (min-width: 480px) {
+    .club-home {
+      .home-nav {
+        width: 93%;
+      }
     }
 }

@@ -1,28 +1,40 @@
 .current-container {
-  text-align: center;
-  border: 1px $color-primary solid;
-  width: 45%;
-  padding: 4em;
-  margin: 2em auto;
-  margin-top: 0;
-  line-height: 1.7em;
-  background: $color-tertiary;
-  
+    text-align: center;
+    border: 1px $color-primary solid;
+    width: 45%;
+    padding: 4em;
+    margin: 0 auto 2em;
+    line-height: 1.7em;
+    background: $color-tertiary;
 
-  .current-book-messages {
-    margin: 2em 0 2em 0;
-    line-height: 1.5em;
-  }
+    input {
+        background: $color-secondary;
+    }
 
-  .current-book-message {
-    margin: 2em 0 2em 0;
-  }
+    .current-book-messages {
+        margin: 2em 0;
+        line-height: 1.5em;
+    }
 
-  .publish-book-note {
-    // text-align: left;
-  }
+    .current-book-message {
+        margin: 2em 0;
+    }
 
-  .edit-delete-buttons {
+    .publish-book-note {
+        // text-align: left;
+    }
 
-  }
+    .edit-delete-buttons {}
+}
+@media (min-width: 480px) {
+    .current-container {
+
+      textarea {
+        width: 10em;
+      }
+
+        div {
+            margin: 1em;
+        }
+    }
 }

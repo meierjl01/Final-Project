@@ -7,4 +7,17 @@
     line-height: 1.7em;
     background: $color-tertiary;
 
+    #create-club {
+      background: $color-secondary;
+    }
+
   }
+
+  @media (min-width: 480px) {
+
+    .create-club {
+      textarea {
+        width: 10em;
+      }
+  }
+}

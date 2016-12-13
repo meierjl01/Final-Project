@@ -31,3 +31,16 @@
         margin-bottom: 4em;
     }
 }
+
+@media(min-width: 480px) {
+    .past-container {
+        text-align: center;
+
+        .book-info {
+
+            div {
+                margin: 1em;
+            }
+        }
+    }
+}

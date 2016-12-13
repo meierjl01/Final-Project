@@ -13,11 +13,15 @@ export default React.createClass({
     }
     // console.log(this.props.inPast, this.props.inFuture, this.props.inCurrent);
     return (
-      <li>
-        <span>{this.props.book.best_book.title}</span>
-        <span>Rating: {this.props.book.average_rating}</span>
-        <img alt="book's cover image" src={this.props.book.best_book.image_url} />
-        <span>{this.props.book.best_book.author.name}</span>
+      <li className="search-item">
+        <div className="book-pic">
+          <img alt="book's cover image" src={this.props.book.best_book.image_url} />
+        </div>
+        <div className="book-info">
+          <span>{this.props.book.best_book.title}</span>
+          <span>{this.props.book.best_book.author.name}</span>
+          <span>Rating: {this.props.book.average_rating}</span>
+        </div>
         {button}
       </li>
     )

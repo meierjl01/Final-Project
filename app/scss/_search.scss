@@ -1,0 +1,21 @@
+.search-div {
+    .search-item {
+        .book-info {
+            display: inline-block;
+            text-align: left;
+            max-width: calc(100% - 98px);
+            padding: 0 0 0 10px;
+            box-sizing: border-box;
+        }
+
+        .book-pic {
+            display: inline-block;
+            position: relative;
+            vertical-align: top;
+        }
+
+        input {
+            background: $color-tertiary;
+        }
+    }
+}

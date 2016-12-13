@@ -12,12 +12,28 @@ body {
         text-align: center;
     }
 
+    .book-info {
+      display: inline-block;
+      text-align: left;
+      max-width: calc(100% - 98px);
+      padding: 0 0 0 10px;
+      box-sizing: border-box;
+    }
+
+    .book-pic {
+        display: inline-block;
+        position: relative;
+        vertical-align: top;
+
+    }
+
     img {
       border: 1px $color-primary solid;
     }
 
     input {
         outline: none;
+        text-align: center;
         font-family: 'Quicksand', sans-serif;
         color: $color-primary;
         border: 1px $color-primary solid;
