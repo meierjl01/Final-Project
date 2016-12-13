@@ -4,8 +4,15 @@ import SearchItem from './searchitem';
 export default React.createClass({
   render() {
 
+    let classname;
+
+    if(this.props.books.length === 0) {
+      classname = "hidden";
+    } else {
+      classname = "search-container";
+    }
+
     let BooksList = this.props.books.map((book, i, arr) => {
-      //figure out whihc of the 4 scenarios it is
       let searchPast = this.props.club.Past.filter((pastbook, i, arr) => {
         return pastbook.title === book.best_book.title && pastbook.author === book.best_book.author.name
       })
@@ -21,11 +28,9 @@ export default React.createClass({
       )
     });
     return (
-      <div>
-        <ul>
+        <ul className={classname}>
         {BooksList}
         </ul>
-      </div>
     )
   }
 });

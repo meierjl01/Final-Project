@@ -41,13 +41,13 @@ export default React.createClass({
           <h2>{this.props.params.name}</h2>
           <span>{this.state.club.description}</span>
         </div>
-        <Search club={this.state.club} clubId={this.state.club.objectId}/>
         <nav className="home-nav">
         <Link to = {`/clubs/${this.props.params.name}/currentbook`}>Current Book</Link>
         <Link to = {`/clubs/${this.props.params.name}/pastbooks`}>Past Books</Link>
         <Link to = {`/clubs/${this.props.params.name}/futurebooks`}>Future Books</Link>
         <Link to = {`/clubs/${this.props.params.name}/messages`}>Club Messages</Link>
         </nav>
+        <Search club={this.state.club} clubId={this.state.club.objectId}/>
         {childrenWithProps}
       </div>
     )

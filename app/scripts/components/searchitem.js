@@ -5,11 +5,11 @@ export default React.createClass({
   render() {
       let button = <input ref="add" type="button" onClick={this.handleAdd} value="Add Book to Future Reads"/>
     if (this.props.inPast === true) {
-      button = <input type="button" value="In Past Books Library" />
+      button = <input type="button" className="save" value="In Past Books Library" />
     } else if (this.props.inFuture === true) {
-      button = <input type="button" value="Already In Future Books Library" />
+      button = <input className="save" type="button" value="Already In Future Books Library" />
     } else if (this.props.inCurrent === true) {
-      button = <input type="button" value="Current Book" />
+      button = <input className="save" type="button" value="Current Book" />
     }
     // console.log(this.props.inPast, this.props.inFuture, this.props.inCurrent);
     return (
@@ -18,9 +18,9 @@ export default React.createClass({
           <img alt="book's cover image" src={this.props.book.best_book.image_url} />
         </div>
         <div className="book-info">
-          <span>{this.props.book.best_book.title}</span>
-          <span>{this.props.book.best_book.author.name}</span>
-          <span>Rating: {this.props.book.average_rating}</span>
+          <div>{this.props.book.best_book.title}</div>
+          <div>{this.props.book.best_book.author.name}</div>
+          <div>Rating: {this.props.book.average_rating}</div>
         </div>
         {button}
       </li>

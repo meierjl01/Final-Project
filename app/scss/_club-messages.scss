@@ -26,7 +26,10 @@
 
 @media (max-width: 480px) {
     .club-messages-container {
-      text-align: center;
+      width: 100%;
+      padding: 0em;
+      line-height: 1.5em;
+      box-sizing: border-box;
 
       textarea {
         width: 8em;

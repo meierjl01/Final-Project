@@ -15,7 +15,6 @@ export default React.createClass ({
     store.books.off('update change', this.updateState);
   },
   render() {
-    // console.log(this.props.club);
     return (
       <div>
       <form onSubmit={this.handleSearch} className="search-div">
@@ -31,7 +30,7 @@ export default React.createClass ({
     e.preventDefault();
     let title = this.refs.title.value;
     store.books.getBooks(title);
-    this.refs.title.value = "";
+    // this.refs.title.value = "";
   },
   updateState() {
     this.setState({books: store.books.toJSON()})

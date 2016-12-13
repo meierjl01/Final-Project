@@ -78,7 +78,7 @@ export default React.createClass({
     )
   }
   return (
-    <div>
+    <div className="profile-container">
       <div>
         <img src={pic} />
       </div>

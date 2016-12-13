@@ -14,7 +14,7 @@ export default React.createClass({
               <div>By: {Current.author}</div>
               <div>Rating: {Current.rating}</div>
             </span>
-            <input className="add-button" type="submit" onClick={this.handleRead} value="Add to Read"/>
+            <div><input className="add-button" type="submit" onClick={this.handleRead} value="Add to Read"/></div>
           </div>
         )
       })
