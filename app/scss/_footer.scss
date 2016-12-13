@@ -1,0 +1,20 @@
+.footer-container {
+  border-top: .5px $color-primary solid;
+  height: 1em;
+  padding: 1em;
+  .footer-div {
+    display: inline-block;
+    vertical-align: center;
+    float: left;
+  }
+  .footer-nav {
+    display: inline-block;
+    float: right;
+
+    .fa {
+      margin-left: .50em;
+      margin-top: -2px;
+      font-size: 1.5em;
+    }
+  }
+}
