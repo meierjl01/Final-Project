@@ -15,8 +15,6 @@ export default React.createClass({
     }
   },
   render() {
-
-    // console.log(this.props.id);
   let pic;
   let info;
   let addPic;
@@ -57,11 +55,13 @@ export default React.createClass({
       );
     }
   } else if(this.state.owned === false) {
-    if(this.state.user.bio) {
+    if(this.props.user.bio) {
       info = (
         <span>
-          <div>Bio: {this.props.user.bio}</div>
-          <div>Favorite Books: {this.props.user.fave}</div>
+          <div>Bio:</div>
+          <div className="bio"> {this.props.user.bio}</div>
+          <div>Favorite Books:</div>
+          <div className="bio"> {this.props.user.fave}</div>
         </span>
       );
     }
