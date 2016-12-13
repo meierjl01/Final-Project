@@ -38,8 +38,8 @@ export default React.createClass({
         <div className="profile">
             <h2>{this.state.user.email}</h2>
             <UserProfile id={this.props.params.id} user={this.state.user}/>
-            <UserClubMessages messages={this.state.messages} id={this.props.params.id}/>
-            <UserBookMessages id={this.props.params.id} bookMessages={this.state.bookMessages}/>
+            <UserClubMessages user={this.state.user} messages={this.state.messages} id={this.props.params.id}/>
+            <UserBookMessages user={this.state.user} id={this.props.params.id} bookMessages={this.state.bookMessages}/>
         </div>
     )
   },

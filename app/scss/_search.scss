@@ -1,3 +1,16 @@
+.search-div {
+    .search {
+        cursor: pointer;
+        cursor: hand;
+        background: $color-quad;
+        color: white;
+    }
+
+    .book-search {
+        width: 50%;
+    }
+}
+
 .search-container {
     text-align: left;
     border: 1px $color-primary solid;
@@ -7,15 +20,8 @@
     line-height: 1.7em;
     background: $color-tertiary;
 
-    .search {
-      cursor: pointer;
-      cursor: hand;
-      background: $color-quad;
-      color: white;
-    }
-
     .hidden {
-      display: none;
+        display: none;
     }
 
     .search-item {
@@ -29,16 +35,15 @@
         }
     }
 }
-
 @media (max-width: 480px) {
     .search-container {
         width: 100%;
-        padding: 0em;
+        padding: 0;
         line-height: 1.5em;
         box-sizing: border-box;
 
         div {
-            margin: .4em;
+            margin: 0.4em;
         }
     }
 }

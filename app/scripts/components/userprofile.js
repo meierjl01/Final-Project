@@ -2,7 +2,7 @@ import React from 'react';
 import { browserHistory } from 'react-router';
 import store from '../store';
 
-export default React.createClass({
+export default React.createClass({ 
   getInitialState() {
       return {
         owned: false,
