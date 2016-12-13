@@ -16,8 +16,11 @@
         margin-bottom: 4em;
 
         .link {
+          color: $color-quad;
           border-bottom: 1px $color-primary solid;
           background: $color-tertiary;
+          cursor: pointer;
+          cursor: hand;
         }
     }
 }

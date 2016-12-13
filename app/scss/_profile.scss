@@ -6,6 +6,10 @@
     margin: 2em auto;
     background: $color-tertiary;
 
+    .profile-container {
+      margin-bottom: 6em;
+    }
+
     h2::after {
         content: '';
         display: block;
@@ -19,15 +23,24 @@
 
     .add-pic {
         margin: 2em 0;
-        background: $color-secondary;
+        background: $color-quad;
+        color: white;
+        cursor: pointer;
+        cursor: hand;
     }
 
     .profile-save {
-        background: $color-secondary;
+        background: $color-quad;
+        color: white;
+        cursor: pointer;
+        cursor: hand;
     }
 
     .edit-bio {
-        background: $color-secondary;
+        background: $color-quad;
+        color: white;
+        cursor: pointer;
+        cursor: hand;
     }
 
     .bio {
@@ -39,11 +52,15 @@
         padding: 0.25em;
         margin: 2em 0;
         line-height: 1.5em;
-        height: 10em;
+        max-height: 20em;
         overflow: scroll;
+        text-align: left;
 
         li {
             margin: 2em 0;
+            div {
+              margin: 1em 0;
+            }
         }
     }
 
@@ -52,11 +69,15 @@
         margin: 2em 0;
         padding: 0.25em;
         line-height: 1.5em;
-        height: 10em;
+        max-height: 20em;
         overflow: scroll;
+        text-align: left;
 
         li {
             margin: 2em 0;
+            div {
+              margin: 1em 0;
+            }
         }
     }
 }

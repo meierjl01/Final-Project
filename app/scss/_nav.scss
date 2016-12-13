@@ -28,6 +28,8 @@
             padding-left: 0.5em;
             margin: 0.5em;
             text-align: center;
+            cursor: pointer;
+            cursor: hand;
         }
     }
 
@@ -38,6 +40,8 @@
             padding-left: 0.5em;
             margin: 0.5em;
             text-align: center;
+            cursor: pointer;
+            cursor: hand;
         }
 
         .logout {
@@ -63,5 +67,9 @@
         float: right;
         display: inline-block;
         position: relative;
+    }
+
+    .logged-out {
+        margin-top: .6em;
     }
 }

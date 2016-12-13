@@ -22,7 +22,10 @@
 
     .link {
       background: $color-tertiary;
+      color: $color-quad;
       border-bottom: 1px $color-primary solid;
+      cursor: pointer;
+      cursor: hand;
     }
 
     .current-book-message {
@@ -31,6 +34,18 @@
 
     .add-button {
         text-align: left;
+        background: $color-quad;
+        color: white;
+        cursor: pointer;
+        cursor: hand;
+    }
+
+    .publish {
+      text-align: left;
+      background: $color-quad;
+      color: white;
+      cursor: pointer;
+      cursor: hand;
     }
 
     .edit-delete-buttons {}

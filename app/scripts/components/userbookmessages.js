@@ -15,10 +15,12 @@ export default React.createClass({
       })
     }
     return (
+      <div>
+      Book Messages:
       <ul className="book-messages">
-        Book Messages:
         {userbookmessages}
       </ul>
+      </div>
     )
   }
 });

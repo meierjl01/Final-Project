@@ -10,7 +10,7 @@ export default React.createClass({
       )
     })
     return (
-      <div className="future-container">
+      <div className="future-container"> 
         <h3>Future Books</h3>
         <ul>{Future}</ul>
       </div>

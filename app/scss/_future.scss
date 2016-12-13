@@ -18,6 +18,11 @@
 
     .add-current {
         margin: 1em 0 2em;
+        text-align: left;
+        background: $color-quad;
+        color: white;
+        cursor: pointer;
+        cursor: hand;
 
         input {
             background: $color-secondary;

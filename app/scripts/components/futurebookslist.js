@@ -12,8 +12,8 @@ export default React.createClass({
           <div>By: {this.props.Future.author}</div>
           <div>Rating: {this.props.Future.rating}</div>
         </span>
-          <div className="add-current">
-            <input type="submit" onClick={this.handleCurrent} value="Add to Current"/>
+          <div>
+            <input className="add-current" type="submit" onClick={this.handleCurrent} value="Add to Current"/>
           </div>
         </li>
     )

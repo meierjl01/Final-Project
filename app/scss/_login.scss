@@ -8,12 +8,19 @@
   margin: 2em auto;
   background: $color-tertiary;
 
-  .login {
-    background: $color-secondary;
+  input {
+    margin: .8em 0;
+    border: 1px solid $color-primary;
+    padding: 15px;
+    border-radius: 2px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
-  input {
-    margin: 1em;
-    border: 1px solid $color-primary;
+  .login {
+    background: #428EAF;
+    color: white;
+    cursor: pointer;
+    cursor: hand;
   }
 }

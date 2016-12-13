@@ -9,6 +9,8 @@
     input {
         margin: 0.5em;
         background: $color-secondary;
+        cursor: pointer;
+        cursor: hand;
     }
 
     img {
@@ -22,6 +24,8 @@
     margin: 0 auto;
     background: $color-tertiary;
     padding: 4em 1em 1em;
+    cursor: pointer;
+    cursor: hand;
 }
 @media (max-width: 480px) {
 

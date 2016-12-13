@@ -15,12 +15,18 @@
     }
 
     input {
-        background: $color-secondary;
+      background: $color-quad;
+      color: white;
+      cursor: pointer;
+      cursor: hand;
     }
 
     a {
       background: $color-tertiary;
+      color: $color-quad;
       border-bottom: 1px $color-primary solid;
+      cursor: pointer;
+      cursor: hand;
     }
 }
 

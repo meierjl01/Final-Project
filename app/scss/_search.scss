@@ -7,6 +7,13 @@
     line-height: 1.7em;
     background: $color-tertiary;
 
+    .search {
+      cursor: pointer;
+      cursor: hand;
+      background: $color-quad;
+      color: white;
+    }
+
     .hidden {
       display: none;
     }
@@ -15,7 +22,10 @@
         margin-bottom: 2em;
 
         input {
-            background: $color-secondary;
+            background: $color-quad;
+            color: white;
+            cursor: pointer;
+            cursor: hand;
         }
     }
 }

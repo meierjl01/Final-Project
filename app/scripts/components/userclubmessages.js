@@ -15,10 +15,12 @@ export default React.createClass({
       })
     }
     return (
-      <ul className="club-messages">
+      <div>
         Club Messages:
-        {userclubmessages}
-      </ul>
+        <ul className="club-messages">
+          {userclubmessages}
+        </ul>
+      </div>
     )
   }
 });
