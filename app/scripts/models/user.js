@@ -77,5 +77,12 @@ export default Backbone.Model.extend({
     },
     addPhoto(fileURL) {
       this.save({pic: fileURL}, {type: 'PUT'});
-    }
+    },
+
+    editProfile({bio, fave}) {
+      this.save({bio, fave}), {type: 'PUT'};
+    },
+    addProfile({bio, fave}) {
+      this.save({bio, fave}), {type: 'PUT'};
+    },
 });

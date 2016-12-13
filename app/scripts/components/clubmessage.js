@@ -23,8 +23,8 @@ export default React.createClass({
         <li className="club-message">
           <div>On {moment(this.props.message.created).format('LLLL')},</div>
           <div><Link to={`/user/${this.props.message.ownerId}`}>{this.props.message.email}</Link>
-          said:</div>
-          <div>"{this.props.message.message}"</div>
+          said: </div>
+          <div> "{this.props.message.message}"</div>
         </li>
       );
     } else if (this.state.editing === false && this.state.owned === true) {

@@ -15,6 +15,8 @@ export default React.createClass({
     }
   },
   render() {
+
+    // console.log(this.props.id);
   let pic;
   let info;
   let addPic;
@@ -35,11 +37,13 @@ export default React.createClass({
     }
     if(this.props.user.bio) {
       info = (
-        <span>
-          <div>Bio: {this.props.user.bio}</div>
-          <div>Favorite Books: {this.props.user.fave}</div>
-          <input onClick={this.handleEditBio} type="submit" value="Edit Your Profile" />
-        </span>
+        <div>
+          <div>Bio: </div>
+          <div className="bio">{this.props.user.bio}</div>
+          <div>Favorite Books: </div>
+          <div className="bio">{this.props.user.fave}</div>
+          <input className="edit-bio" onClick={this.handleEditBio} type="submit" value="Edit Your Profile" />
+        </div>
       );
     } else {
       info = (
@@ -52,6 +56,26 @@ export default React.createClass({
         </form>
       );
     }
+  } else if(this.state.owned === false) {
+    if(this.state.user.bio) {
+      info = (
+        <span>
+          <div>Bio: {this.props.user.bio}</div>
+          <div>Favorite Books: {this.props.user.fave}</div>
+        </span>
+      );
+    }
+  } else if(this.state.editing === true) {
+    info = (
+      <form className="edit-bio-form" onSubmit={this.handleBioSave}>
+        <div>Edit Your Profile: </div>
+        <div>Bio: </div>
+        <div><textarea ref="bio" defaultValue={this.props.user.bio} /></div>
+        <div>Favorite Books: </div>
+        <div><textarea ref="fave" defaultValue={this.props.user.fave} /></div>
+        <input className="profile-save" type="submit" value="Save" />
+      </form>
+    )
   }
   return (
     <div>
@@ -67,6 +91,13 @@ export default React.createClass({
     </div>
   )
   },
+  handleBioSave(e) {
+    e.preventDefault();
+    let bio = this.refs.bio.value;
+    let fave = this.refs.fave.value;
+    store.users.get(this.props.id).editProfile({bio, fave});
+    this.setState({editing: false})
+  },
   handleEditBio() {
     this.setState({editing: true})
   },
@@ -74,7 +105,8 @@ export default React.createClass({
     e.preventDefault();
     let bio = this.refs.bio.value;
     let fave = this.refs.book.value;
-    store.user.save({bio, fave});
+    let id = store.users.get(this.props.id);
+    store.users.get(this.props.id).addProfile({bio, fave, id});
     this.setState({editing: false});
   },
   handleAddPic() {

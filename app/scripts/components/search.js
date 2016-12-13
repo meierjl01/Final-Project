@@ -19,7 +19,8 @@ export default React.createClass ({
     return (
       <div>
       <form onSubmit={this.handleSearch} className="search-div">
-        <input ref="title" className="book-search" type="text" placeholder="search for a book"/>
+        <div>Search below for books you want this club to read</div>
+        <input ref="title" className="book-search" type="text" placeholder="Book Title"/>
         <input className="search" type="submit" value="Search" />
       </form>
         <SearchList club={this.props.club} clubId={this.props.clubId} books={this.state.books}/>

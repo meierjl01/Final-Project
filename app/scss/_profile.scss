@@ -21,7 +21,17 @@
       background: $color-secondary;
     }
 
+    .edit-bio {
+      background: $color-secondary;
+    }
+
+    .bio {
+      margin: 1em;
+    }
+
     .club-messages {
+        border: 1px $color-primary dashed;
+        padding: .25em;
         margin: 2em 0;
         line-height: 1.5em;
         height: 10em;
@@ -33,7 +43,9 @@
     }
 
     .book-messages {
+        border: 1px $color-primary dashed;
         margin: 2em 0;
+        padding: .25em;
         line-height: 1.5em;
         height: 10em;
         overflow: scroll;
