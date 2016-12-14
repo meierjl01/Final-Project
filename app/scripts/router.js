@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Route, Router, browserHistory } from 'react-router';
+import { IndexRoute, Route, Router, browserHistory } from 'react-router';
 
 import store from './store';
 import App from './components/containers/app';
@@ -17,6 +17,7 @@ import ProfilePage from './components/containers/profilepage';
 import ImageUpload from './components/containers/imageupload';
 import NotFound from './components/containers/notfound';
 
+
 //onChange takes prevState, nextState, replace, callback
 
 function onChange(prevState, nextState, replace) {
@@ -24,16 +25,23 @@ function onChange(prevState, nextState, replace) {
   store.books.trigger('update');
 };
 
+function blockAuthUser(nextState, replace) {
+  if(window.localStorage.getItem('user-token')) {
+    replace("/clubs");
+  }
+};
+
 const router = (
   <Router history = {browserHistory}>
     <Route onChange={onChange} path="/" component={App}>
-      <Route path="/login" component={Login} />
-      <Route path="/register" component={Register} />
+      <Route path="/login" onEnter={blockAuthUser} component={Login} />
+      <Route path="/register" onEnter={blockAuthUser} component={Register} />
       <Route path="/clubs" component={Clubs} />
       <Route path="/clubs/new" component={NewClub} />
       <Route path="/user/:id" component={ProfilePage} />
       <Route path="/user/images/:id" component={ImageUpload} />
       <Route path="/clubs/:name" component={ClubHome}>
+        <IndexRoute component={ClubMessages} />
         <Route path="/clubs/:name/messages" component={ClubMessages} />
         <Route path="/clubs/:name/currentbook" component={CurrentBook} />
         <Route path="/clubs/:name/futurebooks" component={FutureBooks} />

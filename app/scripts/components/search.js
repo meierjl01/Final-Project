@@ -5,7 +5,8 @@ import SearchList from './searchlist';
 export default React.createClass ({
   getInitialState() {
     return {
-      books: store.books.toJSON()
+      books: store.books.toJSON(),
+      loading: false,
     }
   },
   componentDidMount() {
@@ -15,12 +16,17 @@ export default React.createClass ({
     store.books.off('update change', this.updateState);
   },
   render() {
+    let icon = <div />
+    if(this.state.loading === true) {
+        icon = <div>Searching... <i className="fa fa-cog fa-spin" aria-hidden="true"></i></div>
+    }
     return (
       <div>
       <form onSubmit={this.handleSearch} className="search-div">
         <div>Search below for books you want this club to read</div>
         <input ref="title" className="book-search" type="text" placeholder="Book Title"/>
         <input className="search" type="submit" value="Search" />
+        {icon}
       </form>
         <SearchList club={this.props.club} clubId={this.props.clubId} books={this.state.books}/>
       </div>
@@ -28,11 +34,13 @@ export default React.createClass ({
   },
   handleSearch(e) {
     e.preventDefault();
+    this.setState({loading: true});
+    window.setTimeout(this.updateState, 7000);
     let title = this.refs.title.value;
     store.books.getBooks(title);
-    // this.refs.title.value = "";
+    this.refs.title.value = "";
   },
   updateState() {
-    this.setState({books: store.books.toJSON()})
+    this.setState({books: store.books.toJSON(), loading: false})
   }
 });
