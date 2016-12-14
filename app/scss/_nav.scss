@@ -55,8 +55,11 @@
     }
 }
 @media (min-width: 481px) and (max-width: 587px) {
-  .nav {
+  .logged-in {
     margin-top: -5.25em;
+  }
+  .logged-out {
+    // margin-top: 85px;
   }
 }
 
