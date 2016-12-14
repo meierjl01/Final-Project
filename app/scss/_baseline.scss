@@ -18,6 +18,12 @@ body {
       max-width: calc(100% - 109px);
       padding: 0 0 0 10px;
       box-sizing: border-box;
+      .title {
+        text-decoration: underline;
+      }
+      div {
+        line-height: 1.5em;
+      }
     }
 
     .book-pic {

@@ -48,7 +48,13 @@
       cursor: hand;
     }
 
-    .edit-delete-buttons {}
+    .edit-delete-buttons {
+      text-align: left;
+      background: $color-quad;
+      color: white;
+      cursor: pointer;
+      cursor: hand;
+    }
 }
 @media (max-width: 480px) {
     .current-container {

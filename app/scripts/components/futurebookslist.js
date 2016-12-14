@@ -8,7 +8,7 @@ export default React.createClass({
         <li>
         <img className="book-pic" alt="book's cover image" src={this.props.Future.image} />
         <span className="book-info">
-          <div>{this.props.Future.title}</div>
+          <div className="title">{this.props.Future.title}</div>
           <div>By: {this.props.Future.author}</div>
           <div>Rating: {this.props.Future.rating}</div>
         </span>

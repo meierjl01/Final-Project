@@ -13,6 +13,25 @@ export default React.createClass({
       bookMessages: [],
     };
   },
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.params.id !== this.props.params.id) {
+      this.setState(this.getInitialState());
+
+      store.messages.fetch({data: {where: `ownerId='${nextProps.params.id}'`}});
+
+      store.bookMessages.fetch({data: {where: `ownerId='${nextProps.params.id}'`}});
+
+      store.users.get(this.props.params.id).off('change', this.updateState);
+
+      var model = store.users.get(this.props.params.id)
+      if(!model) {
+        model = new User({objectId: this.props.params.id});
+        store.users.add(model)
+      }
+      model.fetch();
+      model.on('change', this.updateState);
+    }
+  },
   componentDidMount() {
     var model = store.users.get(this.props.params.id)
     if(!model) {

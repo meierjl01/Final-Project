@@ -13,7 +13,6 @@ export default React.createClass({
         )
       });
     } else if (this.props.bookMessages.length === 0) {
-      // username = this.props.user.email;
       userbookmessages = `${this.props.user.email} hasn't written any book messages yet`;
     }
     return (

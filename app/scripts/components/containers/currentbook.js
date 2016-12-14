@@ -10,7 +10,7 @@ export default React.createClass({
           <div key={i}>
             <img className="book-pic" alt="book's cover image" src={Current.image} />
             <span className="book-info">
-              <div>{Current.title}</div>
+              <div className="title">{Current.title}</div>
               <div>By: {Current.author}</div>
               <div>Rating: {Current.rating}</div>
             </span>

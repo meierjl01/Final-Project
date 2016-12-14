@@ -31,9 +31,9 @@ export default React.createClass({
         On {moment(this.props.message.created).format('LLLL')},
         <div><Link className="link" to={`/user/${this.props.message.ownerId}`}>{this.props.message.email}</Link> said: </div>
         "{this.props.message.message}"
-        <div className="edit-delete-buttons">
-          <input onClick={this.handleEdit} type="button" value="Edit"/>
-          <input onClick={this.handleDelete} type="button" value="Delete"/>
+        <div>
+          <input className="edit-delete-buttons" onClick={this.handleEdit} type="button" value="Edit"/>
+          <input className="edit-delete-buttons" onClick={this.handleDelete} type="button" value="Delete"/>
         </div>
       </li>
     )

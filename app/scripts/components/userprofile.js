@@ -2,12 +2,17 @@ import React from 'react';
 import { browserHistory } from 'react-router';
 import store from '../store';
 
-export default React.createClass({ 
+export default React.createClass({
   getInitialState() {
       return {
         owned: false,
         editing: false,
       }
+  },
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.id === window.localStorage.getItem('ownerId')) {
+      this.setState({owned: true})
+    }
   },
   componentWillMount(){
     if(this.props.id === window.localStorage.getItem('ownerId')) {

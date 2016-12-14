@@ -18,7 +18,7 @@ export default React.createClass({
           <img alt="book's cover image" src={this.props.book.best_book.image_url} />
         </div>
         <div className="book-info">
-          <div>{this.props.book.best_book.title}</div>
+          <div className="title">{this.props.book.best_book.title}</div>
           <div>{this.props.book.best_book.author.name}</div>
           <div>Rating: {this.props.book.average_rating}</div>
         </div>
