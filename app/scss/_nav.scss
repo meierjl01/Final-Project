@@ -54,24 +54,31 @@
         }
     }
 }
-@media (min-width: 480px) {
+@media (min-width: 481px) and (max-width: 587px) {
+  .nav {
+    margin-top: -5.25em;
+  }
+}
+
+@media (max-width: 480px){
     .app-name {
         font-size: 1.5em;
         vertical-align: center;
     }
 
     .nav {
-        padding: .34em;
         float: right;
+        margin-top: -56px;
         display: inline-block;
         position: relative;
     }
 
     .logged-in {
-      margin-top: .65em;
+      font-size: 13px;
+      margin-top: -14px;
     }
 
     .logged-out {
-        margin-top: .6em;
+        margin-top: 2.9em;
     }
 }

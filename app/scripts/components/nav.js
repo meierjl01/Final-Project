@@ -18,8 +18,8 @@ export default React.createClass({
   render() {
     let nav =
       <nav className="logged-out">
-        <Link to = "/login">Log In</Link>
-        <Link to = "/register">Register</Link>
+        <Link to = "/login"><i className="fa fa-sign-in" aria-hidden="true"></i> Log In</Link>
+        <Link to = "/register"> <i className="fa fa-user-plus" aria-hidden="true"></i> Register</Link>
       </nav>;
     if(this.state.authenticated) {
       nav = (
@@ -27,7 +27,7 @@ export default React.createClass({
           <Link to = "/clubs"><i className="fa fa-home" aria-hidden="true"></i>   Home</Link>
           <Link to = {`/user/${window.localStorage.getItem('ownerId')}`}><i className="fa fa-user-circle" aria-hidden="true"></i> My Profile</Link>
           <Link to = "/clubs/new"><i className="fa fa-book" aria-hidden="true"></i> Create A Club</Link>
-          <input type = "submit" className="logout" onClick={this.handleLogout} value="Log Out"/>
+          <button className="logout" onClick={this.handleLogout}><i className="fa fa-sign-out" aria-hidden="true"></i> Log Out</button>
         </nav>
       )
     };
