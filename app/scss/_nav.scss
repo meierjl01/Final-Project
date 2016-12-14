@@ -9,17 +9,14 @@
 }
 
 .nav {
-    padding: 2em;
+    padding-top: 2em;
     float: right;
-    display: inline-block;
-    vertical-align: center;
-    position: relative;
 
-    .nav::after {
-        clear: both;
-        content: "";
-        display: block;
-    }
+    // .nav::after {
+    //     clear: both;
+    //     content: "";
+    //     display: block;
+    // }
 
     .logged-out {
         a {
@@ -54,34 +51,16 @@
         }
     }
 }
-@media (min-width: 481px) and (max-width: 587px) {
-  .logged-in {
-    margin-top: -5.25em;
-  }
-  .logged-out {
-    // margin-top: 85px;
-  }
+@media (max-width: 590px) {
+.nav {
+  display: block;
+  float: none;
+  padding-bottom: 20px;
+  padding-top: 0px;
 }
 
-@media (max-width: 480px){
-    .app-name {
-        font-size: 1.5em;
-        vertical-align: center;
-    }
+.app-name {
+  padding-left: 10px;
+}
 
-    .nav {
-        float: right;
-        margin-top: -56px;
-        display: inline-block;
-        position: relative;
-    }
-
-    .logged-in {
-      font-size: 13px;
-      margin-top: -14px;
-    }
-
-    .logged-out {
-        margin-top: 2.9em;
-    }
 }
